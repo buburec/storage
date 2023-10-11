@@ -8,6 +8,14 @@
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>FrontController.Controller</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FrontController</servlet-name>
+        <url-pattern>/FrontController</url-pattern>
+    </servlet-mapping>
     <error-page>
         <error-code>404</error-code>
         <location>/error.jsp</location>

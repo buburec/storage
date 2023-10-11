@@ -1,4 +1,9 @@
-package controller;
+package FrontController.command.factory;
+
+import FrontController.resource.MessageManager;
+import FrontController.command.ActionCommand;
+import FrontController.command.EmptyCommand;
+import FrontController.command.client.CommandEnum;
 
 import javax.servlet.http.HttpServletRequest;
 

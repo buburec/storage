@@ -1,13 +1,14 @@
-package controller;
+package FrontController.command;
+
+import FrontController.resource.ConfigurationManager;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class LogoutCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
-        // String page = "/index.jsp";
         String page = ConfigurationManager.getProperty("path.page.index");
-        // уничтожение сессии
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         request.getSession().invalidate();
         return page;
     }

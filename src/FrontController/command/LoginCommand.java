@@ -1,4 +1,8 @@
-package controller;
+package FrontController.command;
+
+import FrontController.resource.ConfigurationManager;
+import FrontController.logic.LoginLogic;
+import FrontController.resource.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,13 +13,13 @@ public class LoginCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;
-        // извлечение из запроса логина и пароля
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         String login = request.getParameter(PARAM_NAME_LOGIN);
         String pass = request.getParameter(PARAM_NAME_PASSWORD);
-        // проверка логина и пароля
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (LoginLogic.checkLogin(login, pass)) {
             request.setAttribute("user", login);
-            // определение пути к main.jsp
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ main.jsp
             page = ConfigurationManager.getProperty("path.page.main");
             // page = "/main.jsp";
         } else {

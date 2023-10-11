@@ -1,4 +1,4 @@
-package controller;
+package FrontController.command;
 
 import javax.servlet.http.HttpServletRequest;
 

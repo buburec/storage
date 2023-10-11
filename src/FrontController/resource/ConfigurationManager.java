@@ -1,14 +1,11 @@
-package controller;
+package FrontController.resource;
 
 import java.util.ResourceBundle;
 
-// import com.prutzkow.resourcer.*;
-
 public class ConfigurationManager {
     private final static ResourceBundle resourceBundle = ResourceBundle.getBundle("resources.config");
-    // private final static Resourcer resourcer = ProjectResourcer.getInstance();
 
-    // класс извлекает информацию из файла config.properties
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ config.properties
     private ConfigurationManager() {
     }
 

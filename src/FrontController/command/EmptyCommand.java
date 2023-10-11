@@ -1,4 +1,6 @@
-package controller;
+package FrontController.command;
+
+import FrontController.resource.ConfigurationManager;
 
 import javax.servlet.http.HttpServletRequest;
 

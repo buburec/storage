@@ -1,4 +1,8 @@
-package controller;
+package FrontController.command.client;
+
+import FrontController.command.ActionCommand;
+import FrontController.command.LoginCommand;
+import FrontController.command.LogoutCommand;
 
 public enum CommandEnum {
     LOGIN {

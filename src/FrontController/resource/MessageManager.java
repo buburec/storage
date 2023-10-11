@@ -1,16 +1,11 @@
-package controller;
+package FrontController.resource;
 
 import java.util.ResourceBundle;
 
-// import com.prutzkow.resourcer.*;
-
-// import com.prutzkow.resourcer.*;
-
 public class MessageManager {
     private final static ResourceBundle resourceBundle = ResourceBundle.getBundle("resources.messages");
-    // private final static Resourcer resourcer = ProjectResourcer.getInstance();
 
-    // класс извлекает информацию из файла messages.properties
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ messages.properties
     private MessageManager() {
     }
 

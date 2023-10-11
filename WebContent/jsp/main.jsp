@@ -5,5 +5,5 @@
     <hr/>
         ${user}, hello!
     <hr/>
-    <a href="controller?command=logout">Logout</a>
+    <a href="FrontController?command=logout">Logout</a>
 </body></html>

@@ -3,12 +3,9 @@ package FrontController.command;
 import FrontController.resource.ConfigurationManager;
 
 import javax.servlet.http.HttpServletRequest;
-
-public class LogoutCommand implements ActionCommand {
+public class WelcomeCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
-        String page = ConfigurationManager.getProperty("path.page.index");
-        request.getSession().invalidate();
-        return page;
+        return ConfigurationManager.getProperty("path.page.welcome");
     }
 }

@@ -1,8 +1,6 @@
 package FrontController.command.client;
 
-import FrontController.command.ActionCommand;
-import FrontController.command.LoginCommand;
-import FrontController.command.LogoutCommand;
+import FrontController.command.*;
 
 public enum CommandEnum {
     LOGIN {
@@ -14,7 +12,23 @@ public enum CommandEnum {
         {
             this.command = new LogoutCommand();
         }
+    },
+    WELCOME {
+        {
+            this.command = new WelcomeCommand();
+        }
+    },
+    USER_LIST{
+        {
+            this.command = new UserListCommand();
+        }
+    },
+    PROFILE{
+        {
+            this.command = new ProfileCommand();
+        }
     };
+
     ActionCommand command;
 
     public ActionCommand getCurrentCommand() {

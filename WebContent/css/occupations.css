@@ -1,0 +1,114 @@
+.occupations__wrapper {
+    font-family: 'Montserrat';
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid black;*/
+
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.occupations__wrapper h1 {
+    padding: 20px;
+    font-size: 28px;
+    width: 100%;
+    font-weight: bold;
+    /*border: 1px solid black;*/
+}
+
+.occupations__wrapper form {
+    width: 60%;
+    /*border: 1px solid black;*/
+
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+.occupations__wrapper form input[type="submit"] {
+    border: 4px solid black;
+    padding: 10px;
+    margin: 10px;
+    height: 50px;
+    width: 200px;
+    background: lightsalmon;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.occupations__wrapper form input[type="submit"]:hover {
+    background: navajowhite;
+    font-weight: 700;
+    border-radius: 18px;
+    font-size: 18px;
+    transition: .5s;
+}
+
+.occupations__list {
+    width: 100%;
+    
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: inherit;
+}
+
+.occupations__item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: lightsalmon;
+    border: 4px solid black;
+    border-radius: 6px;
+    /*border: 1px solid black;*/
+    position: relative;
+    /*cursor: pointer;*/
+    
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+/*.occupations__item:hover {
+    background: bisque;
+    transition: .5s;
+}*/
+
+.occupations__field {
+    /*border: 1px solid black;*/
+    padding: 10px;
+    text-align: left;
+    border-right: 2px solid black;
+    font-weight: 600;
+    font-size: 20px;
+
+    flex-wrap: nowrap;
+    display: flex;
+    overflow: inherit;
+}
+
+#identifier.occupations__field  {
+    width: 12%;
+}
+
+#title.occupations__field  {
+    width: 28%;
+}
+
+#description.occupations__field  {
+    width: 60%;
+    border-right: 1px transparent;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <path style="stroke: rgb(0, 0, 0); vector-effect: non-scaling-stroke;" d="M 35 105 H 55 V 225 H 40 A 5 5 0 0 1 35 220 V 105 Z" bx:shape="rect 35 105 20 120 0 0 0 5 1@f8a366a3"/>
+  <path style="stroke: rgb(0, 0, 0); vector-effect: non-scaling-stroke;" d="M 195 105 H 215 V 220 A 5 5 0 0 1 210 225 H 195 V 105 Z" bx:shape="rect 195 105 20 120 0 0 5 0 1@ae871bb5"/>
+  <path d="M 25 95 L 125 25.049 L 225 95 L 225 105 L 25 105 L 25 95 Z" style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;"/>
+  <path d="M 125 204.996 m -20 0 a 20 20 0 1 0 40 0 a 20 20 0 1 0 -40 0 Z M 125 204.996 m -10 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 -20 0 Z" style="stroke: rgb(0, 0, 0); vector-effect: non-scaling-stroke;" bx:shape="ring 125 204.996 10 10 20 20 1@1fe60648"/>
+  <path style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" d="M 75 200.031 H 110 V 210.031 H 80 A 5 5 0 0 1 75 205.031 V 200.031 Z" bx:shape="rect 75 200.031 35 10 0 0 0 5 1@89aa12dc"/>
+  <path style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" d="M 80 165 H 85 V 200 H 75 V 170 A 5 5 0 0 1 80 165 Z" bx:shape="rect 75 165 10 35 5 0 0 0 1@03b76afd"/>
+  <path style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" d="M 95 135 H 105 V 170 A 5 5 0 0 1 100 175 H 95 V 135 Z" bx:shape="rect 95 135 10 40 0 0 5 0 1@30e79a91"/>
+  <rect style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" x="105" y="135" width="40" height="10"/>
+  <path style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" d="M 140 200 H 155 V 205 A 5 5 0 0 1 150 210 H 140 V 200 Z" bx:shape="rect 140 200 15 10 0 0 5 0 1@40cb50ee"/>
+  <path style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" d="M 145 135 H 150 A 5 5 0 0 1 155 140 V 185 H 150 A 5 5 0 0 1 145 180 V 135 Z" bx:shape="rect 145 135 10 50 0 5 0 5 1@74fb864e"/>
+  <path style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" d="M 165 175 H 175 V 210 H 170 A 5 5 0 0 1 165 205 V 175 Z" bx:shape="rect 165 175 10 35 0 0 0 5 1@9a0957c6"/>
+  <rect style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" x="175" y="200" width="20" height="10"/>
+  <path d="M 125 165 m -10 0 a 10 10 0 1 0 20 0 a 10 10 0 1 0 -20 0 Z M 125 165 m 0 0 a 0 0 0 0 1 0 0 a 0 0 0 0 1 0 0 Z" style="stroke: rgb(0, 0, 0); vector-effect: non-scaling-stroke; stroke-width: 2px;" bx:shape="ring 125 165 0 0 10 10 1@d93345e4"/>
+  <path style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" d="M 170 125 H 175 V 160 A 5 5 0 0 1 170 165 H 165 V 130 A 5 5 0 0 1 170 125 Z" bx:shape="rect 165 125 10 40 5 0 5 0 1@a2d03fa5"/>
+  <rect style="stroke: rgb(0, 0, 0); stroke-linecap: round; vector-effect: non-scaling-stroke;" x="175" y="125" width="20" height="10"/>
+</svg>

@@ -1,24 +1,25 @@
 @font-face { 
-	font-family: 'montserrat'; 
-	src: url('montserrat.ttf'); 
+	font-family: 'Montserrat'; 
+	src: url('../fonts/montserrat.ttf');
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'montserrat';
+	font-family: 'Montserrat';
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	background: linear-gradient(135deg, tomato, lightsalmon);
-	height: 100vh;
+	/*background: linear-gradient(135deg, tomato, lightsalmon);*/
+    background-image: linear-gradient(90deg, #ff9966, #ff5e62);
+	height: 80px;
 	overflow: hidden;
 }
 
-.center {
+.login__wrapper {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -26,30 +27,30 @@ body {
 	width: 400px;
 	background: white;
 	border-radius: 25px;
-	border: 4px solid;
-	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+	/*border: 4px solid;*/
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.center h1 {
+.login__wrapper h1 {
 	text-align: center;
 	padding: 20px 0;
-	border-bottom: 1px solid silver;
+	border-bottom: 2px solid black;
 }
 
-.center form {
+.login__wrapper form {
 	padding: 0 40px;
 	box-sizing: border-box;
 }
 
-form .text_field {
-	position: relative;
-	border-bottom: 2px solid #adadad;
+.login__field {
+    position: relative;
+	border-bottom: 2px solid black;
 	margin: 30px 0;
 }
 
-.text_field input {
+.login__field input {
 	width: 100%;
-	padding: 0 5px;
+	padding: 0 6px;
 	height: 40px;
 	font-size: 16px;
 	border: none;
@@ -57,18 +58,18 @@ form .text_field {
 	outline: none;
 }
 
-.text_field label {
-	position: absolute;
+.login__field label {
+    position: absolute;
 	top: 50%;
-	left: 5px;
-	color: #adadad;
+	left: 6px;
+	color: black;
 	transform: translateY(-50%);
 	font-size: 16px;
 	pointer-events: none;
 	transition: .5s;
 }
 
-.text_field span::before {
+.login__field span::before {
 	content: '';
 	position: absolute;
 	top: 40px;
@@ -79,31 +80,22 @@ form .text_field {
 	transition: .5s;
 }
 
-.text_field input:focus ~ label,
-.text_field input:valid ~ label {
+.login__field input:focus ~ label,
+.login__field input:valid ~ label {
 	top: -5px;
-	color: orangered;
+    color: orangered;
 }
 
-.text_field input:focus ~ span::before,
-.text_field input:valid ~ span::before {
+.login__field input:focus ~ span::before,
+.login__field input:valid ~ span::before {
 	width: 100%;
-}
-
-.pass {
-	margin: -5px 0 20px 5px;
-	color: orangered;
-	cursor: pointer;
-}
-
-.pass:hover {
-	text-decoration: underline;
+    height: 2px;
 }
 
 input[type="submit"] {
 	width: 100%;
 	height: 50px;
-	border: 1px solid;
+	border: 2px solid;
 	background: tomato;
 	border-radius: 25px;
 	font-size: 18px;
@@ -111,10 +103,10 @@ input[type="submit"] {
 	font-weight: 700;
 	cursor: pointer;
 	outline: none;
-	margin-bottom: 15px;
+	margin-bottom: 24px;
 }
 
 input[type="submit"]:hover {
-	background: orangered;
+	background: linear-gradient(90deg, tomato, lightsalmon);
 	transition: .5s;
 }

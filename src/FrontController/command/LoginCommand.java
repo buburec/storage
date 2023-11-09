@@ -15,9 +15,18 @@ public class LoginCommand implements ActionCommand {
         String page = null;
         String login = request.getParameter(PARAM_NAME_LOGIN);
         String pass = request.getParameter(PARAM_NAME_PASSWORD);
-        if (LoginLogic.checkLogin(login, pass)) {
+        if (LoginLogic.checkAdminLogin(login, pass)) {
             request.setAttribute("user", login);
-            page = ConfigurationManager.getProperty("path.page.welcome");
+            page = ConfigurationManager.getProperty("path.page.admin.welcome");
+        } else if (LoginLogic.checkModeratorLogin(login, pass)) {
+            request.setAttribute("user", login);
+            page = ConfigurationManager.getProperty("path.page.moderator.welcome");
+        } else if (LoginLogic.checkDriverLogin(login, pass)) {
+            request.setAttribute("user", login);
+            page = ConfigurationManager.getProperty("path.page.driver.welcome");
+        } else if (LoginLogic.checkStorekeeperLogin(login, pass)) {
+            request.setAttribute("user", login);
+            page = ConfigurationManager.getProperty("path.page.storekeeper.welcome");
         } else {
             request.setAttribute("errorLoginPassMessage", MessageManager.getProperty("message.loginerror"));
             page = ConfigurationManager.getProperty("path.page.login");

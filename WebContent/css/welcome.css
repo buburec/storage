@@ -1,106 +1,69 @@
-@font-face { 
-	font-family: 'montserrat'; 
-	src: url('montserrat.ttf'); 
+.welcome__wrapper {
+    font-family: 'Montserrat';
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid black;*/
+
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'montserrat';
+.welcome__wrapper h1 {
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+
+    text-decoration: none;
+    justify-content: inherit;
+    display: inherit;
+    flex-wrap: inherit;
+    overflow-y: inherit;
 }
 
-body {
-	margin: 0;
-	padding: 0;
-	background: white;
-	height: 100vh;
-	overflow: hidden;
+.welcome__description {
+    font-size: 20px;
+
+    justify-content: inherit;
+    display: inherit;
+    flex-wrap: inherit;
+    overflow-y: inherit;
 }
 
-.heading {
-	position: absolute;
-	top: 0%;
-	left: 0%;
-	width: 100%;
-	background: linear-gradient(135deg, tomato, lightsalmon);
+.welcome__list {
+    margin-top: 20px;
+    font-weight: normal;
+    /*border: 1px solid black;*/
+    
+    justify-content: inherit;
+    display: inherit;
+    flex-wrap: nowrap;
+    overflow-y: inherit;
 }
 
-.heading img {
-	width: 80px;
-	height: 80px;
-	margin: 10px;
-	float: left;
+.welcome__item {
+    font-size: 16px;
+    max-width: 30%;
+    height: 100%;
+    margin: auto;
+    font-weight: 400;
+    /*border: 1px solid black;*/
+
+    flex-wrap: wrap;
+    overflow-y: inherit;
 }
 
-.heading table {
-	color: black;	
-	font-size: 28;
-	font-weight: 600;
-	text-align: left;
-	top: 5px;
-	width: 100%;
-	border-bottom: 4px solid;
-}
-
-.heading td {
-	width: 20%;
-}
-
-.heading a {
-	text-decoration: none;
-	text-shadow: 0px 2px 2px orangered;
-	color: black;
-	target: _parent;
-}
-
-.heading a:hover {
-	text-decoration: none;
-	text-shadow: 0px 2px 2px black;
-	color: bisque;
-	transition: .25s;
-}
-
-.welcome {
-	position: relative;
-	top: 160px;
-	left: 0%
-}
-
-.welcome h1 {
-	color: black;	
-	font-size: 28;
-	text-align: center;
-	padding-bottom: 20px;
-}
-
-.welcome table {
-	color: black;
-	font-size: 16;
-	text-align: center;
-	top: 5px;
-	padding-right: 10%;
-	padding-left: 10%;
-	width: 100%;
-}
-
-.welcome caption {
-	color: black;	
-	font-size: 20;
-	text-align: center;
-	padding-right: 10%;
-	padding-left: 10%;
-	top: 5px;
-}
-
-.welcome td {
-	padding: 20px;
-	width: 30%;
-	vertical-align: top;
-}
-
-.welcome p {
-	text-decoration: italic;
-	font-size: 20;
-	border-bottom: 2px solid black;
+.welcome__item h2 {
+    font-weight: 600;
+    font-size: 20px;
+    width: 100%;
+    padding: 4px;
+    border-bottom: 2px solid black;
+    /*border: 1px solid black;*/
+    margin-bottom: 10px;
 }

@@ -1,143 +1,270 @@
-@font-face { 
-	font-family: 'montserrat'; 
-	src: url('montserrat.ttf'); 
+.profile__wrapper {
+    font-family: 'Montserrat';
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid black;*/
+
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
-* {
-	color: black;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'montserrat';
+.profile__wrapper h1 {
+    padding: 20px;
+    font-size: 28px;
+    width: 100%;
+    font-weight: bold;
+    /*border: 1px solid black;*/
 }
 
-body {
-	margin: 0;
-	padding: 0;
-	background: white;
-	height: 100vh;
-	overflow: hidden;
+.profile__wrapper form {
+    width: 60%;
+    background: lightsalmon;
+    border: 4px solid black;
+    border-radius: 6px;
+
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    overflow: inherit;
 }
 
-.heading {
-	position: absolute;
-	top: 0%;
-	left: 0%;
-	width: 100%;
-	background: linear-gradient(135deg, tomato, lightsalmon);
+.profile__list {
+    width: 100%;
+    
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: inherit;
 }
 
-.heading img {
-	width: 80px;
-	height: 80px;
-	margin: 10px;
-	float: left;
+.profile__item {
+    padding: 10px;
+    /*border: 1px solid black;*/
+    
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: inherit;
 }
 
-.heading table {
-	color: black;	
-	font-size: 28;
-	font-weight: 600;
-	text-align: left;
-	top: 5px;
-	width: 100%;
-	border-bottom: 4px solid;
+.profile__item input[type="submit"] {
+    /*border: 1px solid black;*/
+    padding: 10px;
+    margin: 10px;
+    height: 50px;
+    width: 200px;
+    background: oldlace;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    overflow: inherit;
 }
 
-.heading td {
-	width: 20%;
+.profile__item input[type="submit"]:hover {
+    background: navajowhite;
+    font-weight: 700;
+    border-radius: 18px;
+    font-size: 18px;
+    transition: .5s;
 }
 
-.heading a {
-	text-decoration: none;
-	text-shadow: 0px 2px 2px orangered;
-	color: black;
-	target: _parent;
+.profile__field {
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+    /*border: 1px solid black;*/
+    font-weight: 600;
+    font-size: 20px;
+
+    flex-wrap: wrap;
+    display: flex;
+    overflow: inherit;
 }
 
-.heading a:hover {
-	text-decoration: none;
-	text-shadow: 0px 2px 2px black;
-	color: bisque;
-	transition: .25s;
+.profile__field label {
+    /*border: 1px solid black;*/
+    padding-top: 6px;
+
+    font-weight: inherit;
+    font-size: inherit;
+    overflow: inherit;
 }
 
-.profile {
-	position: relative;
-	top: 160px;
-	left: 0%
+.profile__field input[type="text"] {
+    padding: 6px;
+    height: 40px;
+    background: oldlace;
+    font-family: 'Montserrat';
+    border-radius: 6px;
+    border: 1px solid transparent;
+    /*border: 1px solid black;*/
+
+    font-weight: inherit;
+    font-size: inherit;
+    overflow: inherit;
 }
 
-.profile h1 {
-	font-size: 28;
-	text-align: center;
-	padding-bottom: 20px;
+.profile__blocked-field {
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+    /*border: 1px solid black;*/
+    font-weight: 600;
+    font-size: 20px;
+
+    flex-wrap: wrap;
+    display: flex;
+    overflow: inherit;
 }
 
-.profile table {
-	color: black;
-	font-size: 16;
-	text-align: center;
-	top: 5px;
-	padding-right: 5%;
-	padding-left: 5%;
-	width: 40%;
-	border-radius: 25px;
-	border: 4px solid black;
-	background: linear-gradient(135deg, tomato, lightsalmon);
+.profile__field label {
+    /*border: 1px solid black;*/
+    padding-top: 6px;
+
+    font-weight: inherit;
+    font-size: inherit;
+    overflow: inherit;
 }
 
-.profile caption {
-	color: black;	
-	font-size: 20;
-	text-align: center;
-	padding-right: 10%;
-	padding-left: 10%;
-	top: 5px;
-	margin-bottom: 20px;
+.profile__blocked-field input[type="text"] {
+    padding: 6px;
+    height: 40px;
+    color: dimgray;
+    background: lightgray;
+    font-family: 'Montserrat';
+    border-radius: 6px;
+    border: 1px solid transparent;
+    /*border: 1px solid black;*/
+    pointer-events: none;
+
+    font-weight: inherit;
+    font-size: inherit;
+    overflow: inherit;
 }
 
-.profile td {
-	padding: 10px;
-	width: 30%;
-	text-align: right;
-	height: 40px;
+.profile__trucks__wrapper {
+    font-family: 'Montserrat';
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid black;*/
+
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
-.profile input {
-	width: 320px;
-	padding: 0 5px;
-	height: 40px;
-	font-size: 16px;
-	border: none;
-	background: white;
-	border-radius: 25px;
-	padding-left: 10%;
-	outline: none;
+.profile__trucks__wrapper h1 {
+    padding: 20px;
+    font-size: 28px;
+    width: 100%;
+    font-weight: bold;
+    /*border: 1px solid black;*/
 }
 
-.control {
-	position: relative;
-	top: 160px;
-	left: 0%
+.profile__trucks__wrapper form {
+    width: 60%;
+    /*border: 1px solid black;*/
+
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    overflow: inherit;
 }
 
-.control table {
-	text-align: center;
+.profile__trucks__wrapper form input[type="submit"] {
+    border: 4px solid black;
+    padding: 10px;
+    margin: 10px;
+    height: 50px;
+    width: 200px;
+    background: lightsalmon;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    overflow: inherit;
 }
 
-.control input[type="submit"] {
-	width: 200px;
-	height: 50px;
-	border: 4px solid black;
-	background: tomato;
-	border-radius: 25px;
-	font-size: 20px;
-	cursor: pointer;
-	margin-top: 30px;
+.profile__trucks__wrapper form input[type="submit"]:hover {
+    background: navajowhite;
+    font-weight: 700;
+    border-radius: 18px;
+    font-size: 16px;
+    transition: .5s;
 }
 
-.control input[type="submit"]:hover {
-	background: orangered;
-	transition: .5s;
+.profile__trucks__list {
+    /*border: 1px solid black;*/
+    width: 100%;
+    
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: inherit;
+}
+
+.profile__trucks__item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: lightsalmon;
+    border: 4px solid black;
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+    
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+.profile__trucks__item:hover {
+    background: bisque;
+    transition: .5s;
+}
+
+.profile__trucks__field {
+    /*border: 1px solid black;*/
+    padding: 8px;
+    text-align: left;
+    border-right: 2px solid black;
+    font-weight: 600;
+    font-size: 16px;
+    
+
+    flex-wrap: nowrap;
+    display: flex;
+    overflow: inherit;
+}
+
+#identifier.profile__trucks__field  {
+    width: 16%;
+}
+
+#model.profile__trucks__field  {
+    width: 70%;
+}
+
+#status.profile__trucks__field  {
+    width: 14%;
+    border-right: 1px transparent;
 }

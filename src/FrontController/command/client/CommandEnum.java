@@ -13,19 +13,14 @@ public enum CommandEnum {
             this.command = new LogoutCommand();
         }
     },
-    WELCOME {
+    FORWARD {
         {
-            this.command = new WelcomeCommand();
+            this.command = new ForwardCommand();
         }
     },
-    USER_LIST{
+    USERS {
         {
-            this.command = new UserListCommand();
-        }
-    },
-    PROFILE{
-        {
-            this.command = new ProfileCommand();
+            this.command = new UsersCommand();
         }
     };
 

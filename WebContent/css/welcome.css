@@ -1,69 +1,41 @@
 .welcome__wrapper {
-    font-family: 'Montserrat';
-    text-align: center;
-    text-decoration: none;
-    width: 80%;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    /*border: 1px solid black;*/
+    /* border: 1px solid black; */
+    font-size: 20px;
 
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    overflow-y: hidden;
-}
-
-.welcome__wrapper h1 {
-    padding: 20px;
-    font-size: 28px;
-    font-weight: bold;
-
-    text-decoration: none;
-    justify-content: inherit;
-    display: inherit;
-    flex-wrap: inherit;
-    overflow-y: inherit;
-}
-
-.welcome__description {
-    font-size: 20px;
-
-    justify-content: inherit;
-    display: inherit;
-    flex-wrap: inherit;
-    overflow-y: inherit;
+    overflow: hidden;
 }
 
 .welcome__list {
+    /* border: 1px solid black; */
     margin-top: 20px;
     font-weight: normal;
-    /*border: 1px solid black;*/
     
     justify-content: inherit;
     display: inherit;
     flex-wrap: nowrap;
-    overflow-y: inherit;
+    overflow: inherit;
 }
 
 .welcome__item {
+    /* border: 1px solid black; */
     font-size: 16px;
     max-width: 30%;
     height: 100%;
     margin: auto;
     font-weight: 400;
-    /*border: 1px solid black;*/
 
     flex-wrap: wrap;
-    overflow-y: inherit;
+    overflow: inherit;
 }
 
 .welcome__item h2 {
+    /* border: 1px solid black; */
     font-weight: 600;
     font-size: 20px;
-    width: 100%;
     padding: 4px;
     border-bottom: 2px solid black;
-    /*border: 1px solid black;*/
     margin-bottom: 10px;
 }

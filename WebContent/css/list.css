@@ -1,0 +1,178 @@
+.list__wrapper {
+    /* border: 1px solid black; */
+    width: 75%;
+
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+.list__wrapper ul {
+    /* border: 1px solid black; */
+
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: inherit;
+}
+
+.list__item {
+    margin-top: 20px;
+    padding: 10px;
+    background: lightsalmon;
+    border: 4px solid black;
+    border-radius: 6px;
+    position: relative;
+    /* cursor: pointer; */
+    
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+.list__item form {
+    /* border: 1px solid black; */
+
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+.list__item input[type="submit"] {
+    border: 4px solid black;
+    margin-left: 12px;
+    background: oldlace;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.list__item input[type="submit"]:hover {
+    background-color: navajowhite;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.list__field {
+    /* border: 1px solid black; */
+    padding: 12px;
+    text-align: left;
+    border-right: 2px solid black;
+    font-weight: 600;
+    font-size: 20px;
+
+    justify-content: left;
+    flex-wrap: nowrap;
+    display: flex;
+    overflow: inherit;
+}
+
+#user__identifier.list__field  {
+    width: 14%;
+}
+
+#user__full-name.list__field  {
+    width: 26%;
+}
+
+#user__occupation.list__field  {
+    width: 22%;
+}
+
+#user__status.list__field  {
+    width: 18%;
+}
+
+#user__picture {
+    background-image: url(../images/user.svg);
+}
+
+#occupation__identifier.list__field {
+    width: 8%;
+}
+
+#occupation__title.list__field {
+    width: 28%;
+}
+
+#occupation__description.list__field {
+    border-right: transparent;
+}
+
+#product__identifier.list__field {
+    width: 12%;
+}
+
+#product__title.list__field {
+    width: 16%;
+}
+
+#product__description.list__field {
+    width: 50%;
+}
+
+#product__quantity.list__field {
+    border-right: transparent;
+}
+
+#truck__identifier.list__field {
+    width: 12%;
+}
+
+#truck__model.list__field {
+    width: 32%;
+}
+
+#truck__host.list__field {
+    width: 26%;
+}
+
+#truck__status.list__field {
+    width: 10%;
+}
+
+#truck__picture {
+    background-image: url(../images/truck.svg);
+}
+
+#request__identifier.list__field {
+    width: 16%;
+    border-bottom: 2px solid black;
+}
+
+#request__truck-model.list__field {
+    width: 54%;
+    border-bottom: 2px solid black;
+}
+
+#request__topic.list__field {
+    width: 14%;
+    border-bottom: 2px solid black;
+    border-right: transparent;
+}
+
+#request__sent-date.list__field {
+    width: 12%;
+}
+
+#request__resolver.list__field {
+    width: 52%;
+}
+
+#request__status.list__field {
+    border-right: transparent;
+}
+
+#request__picture {
+    background-image: url(../images/request.svg);
+}

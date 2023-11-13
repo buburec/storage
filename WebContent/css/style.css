@@ -1,0 +1,201 @@
+/*@font-face {
+    font-family: "Font Awesome";
+    src: url(https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css);
+}*/
+
+@font-face {
+	font-family: 'montserrat';
+	src: url('../fonts/montserrat.ttf');
+}
+
+html {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+    color: black;
+    background-color: oldlace;
+    overflow-x: hidden;
+}
+
+.heading__wrapper {
+    width: 100%;
+    height: 100px;
+    border-bottom: 4px solid black;
+    background: linear-gradient(180deg, tomato, lightsalmon);
+    
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.heading__list {
+    /* border: 1px solid black; */
+    width: 80%;
+    align-items: center;
+
+    justify-content: inherit;
+    display: inherit;
+    flex-wrap: inherit;
+    overflow: inherit;
+}
+
+.heading__item {
+    /* border: 1px solid black; */
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 26px;
+
+    align-items: inherit;
+    justify-content: inherit;
+    display: inherit;
+    flex-wrap: inherit;
+    overflow: inherit;
+}
+
+.heading__item form {
+    overflow: inherit;
+}
+
+
+.heading__item form input[type="submit"] {
+    border: transparent;
+    /* border: 1px solid black; */
+    padding: 6px;
+    font-weight: bold;
+    background: transparent;
+    text-shadow: 0px 2px 2px orangered;
+
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    flex-wrap: inherit;
+    overflow: inherit;
+}
+
+.heading__item form input[type="submit"]:hover {
+	text-shadow: 0px 2px 2px black;
+	color: bisque;
+    cursor: pointer;
+	transition: .25s ease-in-out;
+    
+    animation: submit-swing .25s ease;
+    animation-iteration-count: 1;
+}
+
+.heading__logo {
+    /* border: 1px solid black; */
+    width: 140px;
+    height: 100px;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 2px 2px orangered);
+    
+    flex-wrap: inherit;
+    overflow: inherit;
+}
+
+.heading__logo:hover {
+    animation: logo-swing .5s ease;
+    animation-iteration-count: 1;
+}
+
+.heading__logo form {
+    width: 100%;
+    height: 100%;
+    overflow: inherit;
+}
+
+.heading__logo form input[type="submit"] {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes logo-swing {
+    25% {
+        transform: translateX(4px);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes submit-swing {
+    25% {
+       transform: translateY(-2px);
+    }
+
+    75% {
+        transform: translateY(2px);
+     }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.body__wrapper {
+    /* border: 1px solid black;
+    width: 100%;
+    height: 100%; */
+    overflow-y: auto;
+}
+
+.content__wrapper {
+    /* border: 1px solid black; */
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: normal;
+
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.content__wrapper h1 {
+    /* border: 1px solid black; */
+    padding: 20px;
+    font-size: 28px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.content__submit {
+    border: 4px solid black;
+    padding: 10px;
+    /* margin: 10px; */
+    height: 50px;
+    width: 200px;
+    background: lightsalmon;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.content__submit:hover {
+    background: navajowhite;
+    font-weight: 700;
+    border-radius: 18px;
+    font-size: 18px;
+    transition: .5s;
+}

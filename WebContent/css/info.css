@@ -1,0 +1,342 @@
+.info__wrapper {
+    border: 4px solid black;
+    border-radius: 6px;
+    /* border: 1px solid black; */
+    width: 75%;
+    background: lightsalmon;
+
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    overflow: hidden;
+    
+}
+
+.info__list {
+    justify-content: inherit;
+    overflow: inherit;
+    flex-wrap: inherit;
+    overflow: inherit;
+}
+
+.info__item {
+    padding: 10px;
+    /* border: 1px solid black; */
+    
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+.info__item input[type="submit"] {
+    /* border: 1px solid black; */
+    padding: 10px;
+    margin: 10px;
+    height: 50px;
+    width: 200px;
+    background: oldlace;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.info__item input[type="submit"]:hover {
+    background: navajowhite;
+    font-weight: 700;
+    border-radius: 18px;
+    font-size: 18px;
+    transition: .5s;
+}
+
+.info__field {
+    width: 40%;
+    padding: 10px;
+    text-align: left;
+    /* border: 1px solid black; */
+    font-weight: 600;
+    font-size: 20px;
+
+    flex-wrap: wrap;
+    display: flex;
+    overflow: inherit;
+}
+
+.info__field form {
+    width: 100%;
+}
+
+.info__field label {
+    /*border: 1px solid black;*/
+    padding-top: 6px;
+
+    font-weight: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.info__field input[type="text"] {
+    padding: 6px;
+    height: 40px;
+    background: oldlace;
+    font-family: 'Montserrat';
+    border-radius: 6px;
+    border: transparent;
+    /*border: 1px solid black;*/
+    width: 280px;
+
+    font-weight: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.info__blocked-field {
+    width: 40%;
+    padding: 10px;
+    text-align: left;
+    /* border: 1px solid black; */
+    font-weight: 600;
+    font-size: 20px;
+
+    flex-wrap: wrap;
+    display: flex;
+    overflow: inherit;
+}
+
+.info__blocked-field form {
+    width: 100%;
+}
+
+.info__blocked-field label {
+    /*border: 1px solid black;*/
+    padding-top: 6px;
+
+    font-weight: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.info__blocked-field input[type="text"] {
+    padding: 6px;
+    height: 40px;
+    color: dimgray;
+    background: lightgray;
+    font-family: 'Montserrat';
+    border-radius: 6px;
+    border: transparent;
+    /* border: 1px solid black; */
+    width: 280px;
+    pointer-events: none;
+
+    font-weight: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.info__select-field {
+    width: 40%;
+    padding: 10px;
+    text-align: left;
+    /* border: 1px solid black; */
+
+    flex-wrap: wrap;
+    display: flex;
+    overflow: inherit;
+}
+
+.info__select-field form {
+    width: 100%;
+}
+
+.info__select-field label {
+    /*border: 1px solid black;*/
+    font-weight: 600;
+    font-size: 20px;
+    padding-top: 6px;
+    overflow: inherit;
+}
+
+.info__select-field select {
+    padding: 6px;
+    text-align: left;
+    border: transparent;
+    font-weight: 600;
+    font-size: 20px;
+    height: 40px;
+    background: oldlace;
+    border-radius: 6px;
+    width: 280px;
+
+    flex-wrap: wrap;
+    display: flex;
+    overflow: inherit;
+}
+
+.info__select-field select:hover {
+    background: navajowhite;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: .5s;
+}
+
+.info__select-field select option {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.info__select-field select option:checked {
+    color: white;
+    background: tomato;
+}
+
+.info__trucks__wrapper {
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid black;*/
+
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.info__trucks__wrapper h1 {
+    padding: 20px;
+    font-size: 28px;
+    width: 100%;
+    font-weight: bold;
+    /*border: 1px solid black;*/
+}
+
+.info__trucks__wrapper form {
+    width: 60%;
+    /*border: 1px solid black;*/
+
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+.info__trucks__wrapper form input[type="submit"] {
+    border: 4px solid black;
+    padding: 10px;
+    margin: 10px;
+    height: 50px;
+    width: 200px;
+    background: lightsalmon;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.info__trucks__wrapper form input[type="submit"]:hover {
+    background: navajowhite;
+    font-weight: 700;
+    border-radius: 18px;
+    font-size: 16px;
+    transition: .5s;
+}
+
+.info__trucks__list {
+    /*border: 1px solid black;*/
+    width: 100%;
+    
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: inherit;
+}
+
+.info__trucks__item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: lightsalmon;
+    border: 4px solid black;
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+    
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+.info__trucks__item:hover {
+    background: bisque;
+    transition: .5s;
+}
+
+.info__trucks__field {
+    /*border: 1px solid black;*/
+    padding: 8px;
+    text-align: left;
+    border-right: 2px solid black;
+    font-weight: 600;
+    font-size: 16px;
+    
+
+    flex-wrap: nowrap;
+    display: flex;
+    overflow: inherit;
+}
+
+.info__commentary-field {
+    width: 90%;
+    text-align: left;
+    /* border: 1px solid black; */
+    font-weight: 500;
+    font-size: 18px;
+
+    flex-wrap: wrap;
+    display: flex;
+    overflow: inherit;
+}
+
+.info__commentary-field form {
+    width: 90%;
+}
+
+.info__commentary-field label {
+    /*border: 1px solid black;*/
+    padding-top: 6px;
+    font-weight: 600;
+    font-size: 20px;
+
+    overflow: inherit;
+}
+
+.info__commentary-field textarea {
+    padding: 6px;
+    height: 120px;
+    background: oldlace;
+    font-family: 'Montserrat';
+    border-radius: 6px;
+    border: transparent;
+    /*border: 1px solid black;*/
+    width: 100%;
+    resize: none;
+    overflow-wrap: break-word;
+    cursor: text;
+
+    font-weight: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}

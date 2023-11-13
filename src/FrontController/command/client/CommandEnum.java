@@ -22,6 +22,16 @@ public enum CommandEnum {
         {
             this.command = new UsersCommand();
         }
+    },
+    EDIT_USER {
+        {
+            this.command = new EditUserCommand();
+        }
+    },
+    REQUESTS {
+        {
+            this.command = new RequestsCommand();
+        }
     };
 
     ActionCommand command;

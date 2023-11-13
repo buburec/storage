@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,24 +9,24 @@
 	<link rel="stylesheet" href="./css/login.css" type="text/css">
 </head>
 <body>
-	<form name="loginForm" method="POST" action="FrontController">
-	<input type="hidden" name="command" value="login" />
     <div class="login__wrapper">
         <h1>StorageKP</h1>
-	    <form method="post">
-		    <div class="login__field">
-			    <input type="text" name="login" required>
-			    <span></span>
-			    <label>Username</label>
-		    </div>
-		    <div class="login__field">
-			    <input type="password" name="password" required>
-			    <span></span>
-			    <label>Password</label>
-		    </div>
-		    <input type="submit" value="Sign in">
-	    </form>
+        <div class="login__content">
+            <form name="loginForm" method="POST" action="welcome-page">
+                <input type="hidden" name="command" value="login" />
+                <div class="login__field">
+                    <input type="text" name="login" required>
+                    <label>Username</label>
+                    <span></span>
+                </div>
+                <div class="login__field">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                    <span></span>
+                </div>
+                <input type="submit" value="Sign in">
+            </form>
+        </div>
     </div>
-	</form>
 </body>
 </html>

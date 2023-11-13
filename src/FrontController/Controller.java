@@ -39,8 +39,7 @@ public class Controller extends HttpServlet {
         // метод возвращает страницу ответа
         // page = null; // поэксперементировать!
         if (page != null) {
-            RequestDispatcher dispatcher =
-                    getServletContext().getRequestDispatcher(page);
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
             // вызов страницы ответа на запрос
             dispatcher.forward(request, response);
         } else {

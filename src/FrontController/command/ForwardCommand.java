@@ -8,7 +8,8 @@ public class ForwardCommand implements ActionCommand {
     private static final String PARAM_NAME_PAGE = "page";
     @Override
     public String execute(HttpServletRequest request) {
-        request.setAttribute("userList", 1);
+        String visibility = request.getParameter("visibility");
+        request.setAttribute("visibility", visibility);
         return ConfigurationManager.getProperty(request.getParameter(PARAM_NAME_PAGE));
     }
 }

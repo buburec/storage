@@ -1,5 +1,5 @@
 @font-face { 
-	font-family: 'Montserrat'; 
+	font-family: 'montserrat';
 	src: url('../fonts/montserrat.ttf');
 }
 
@@ -7,19 +7,20 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Montserrat';
+	font-family: 'montserrat';
 }
 
 body {
+	/* background: linear-gradient(135deg, tomato, lightsalmon); */
 	margin: 0;
 	padding: 0;
-	/*background: linear-gradient(135deg, tomato, lightsalmon);*/
     background-image: linear-gradient(90deg, #ff9966, #ff5e62);
 	height: 80px;
 	overflow: hidden;
 }
 
 .login__wrapper {
+	/* border: 1px black solid; */
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -27,7 +28,6 @@ body {
 	width: 400px;
 	background: white;
 	border-radius: 25px;
-	/*border: 4px solid;*/
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -37,7 +37,7 @@ body {
 	border-bottom: 2px solid black;
 }
 
-.login__wrapper form {
+.login__content {
 	padding: 0 40px;
 	box-sizing: border-box;
 }
@@ -65,6 +65,7 @@ body {
 	color: black;
 	transform: translateY(-50%);
 	font-size: 16px;
+	font-weight: 500;
 	pointer-events: none;
 	transition: .5s;
 }

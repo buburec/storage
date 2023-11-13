@@ -3,6 +3,9 @@ package FrontController.command;
 import FrontController.resource.ConfigurationManager;
 import FrontController.logic.LoginLogic;
 import FrontController.resource.MessageManager;
+import datalayer.DAOFactory;
+import datalayer.DBType;
+import datalayer.DBTypeException;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,6 +18,15 @@ public class LoginCommand implements ActionCommand {
         String page = null;
         String login = request.getParameter(PARAM_NAME_LOGIN);
         String pass = request.getParameter(PARAM_NAME_PASSWORD);
+        DAOFactory factory = null;
+        try {
+            factory = DAOFactory.getInstance(DBType.ORACLE);
+        } catch (DBTypeException e) {
+            e.printStackTrace();
+        } finally {
+            factory.closeConnection();
+        }
+
         if (LoginLogic.checkAdminLogin(login, pass)) {
             request.setAttribute("user", login);
             page = ConfigurationManager.getProperty("path.page.admin.welcome");

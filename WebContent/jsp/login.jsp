@@ -7,6 +7,8 @@
     <title>Login</title>
     <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
 	<link rel="stylesheet" href="./css/login.css" type="text/css">
+	<link rel="shortcut icon" href="../images/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css" type="text/css">
 </head>
 <body>
     <div class="login__wrapper">

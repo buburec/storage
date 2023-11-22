@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,68 +58,45 @@
             <h1>Storage product list</h1>
             <div class="list__wrapper">
                 <ul>
-                    <li class="list__item">
-                        <div class="list__field" id="product__identifier">
-                            00000000
-                        </div>
-                        <div class="list__field" id="product__title">
-                            Elegant Chair
-                        </div>
-                        <div class="list__field" id="product__description">
-                            A stylish and comfortable chair with a modern design
-                        </div>
-                        <div class="list__field" id="product__quantity">
-                            384
-                        </div>
-                    </li>
-                    <li class="list__item">
-                        <div class="list__field" id="product__identifier">
-                            00000001
-                        </div>
-                        <div class="list__field" id="product__title">
-                            Classic Sofa
-                        </div>
-                        <div class="list__field" id="product__description">
-                            A timeless sofa that adds sophistication to any living space
-                        </div>
-                        <div class="list__field" id="product__quantity">
-                            231
-                        </div>
-                    </li>
+                    <c:forEach items="${storageProductList}" var="product">
+                        <li class="list__item">
+                            <div class="list__field" id="product__identifier">
+                                <p>${product.getIdentifier()}</p>
+                            </div>
+                            <div class="list__field" id="product__title">
+                                <p>${product.getTitle()}</p>
+                            </div>
+                            <div class="list__field" id="product__description">
+                                <p>${product.getDescription()}</p>
+                            </div>
+                            <div class="list__field" id="product__quantity">
+                                <p>${product.getQuantity()}</p>
+                            </div>
+                        </li>
+                    </c:forEach>
+                </ul>
             </div>
         </div>
         <div class="content__wrapper">
             <h1>Truck product list</h1>
             <div class="list__wrapper">
                 <ul>
-                    <li class="list__item">
-                        <div class="list__field" id="product__identifier">
-                            00000000
-                        </div>
-                        <div class="list__field" id="product__title">
-                            Elegant Chair
-                        </div>
-                        <div class="list__field" id="product__description">
-                            A stylish and comfortable chair with a modern design
-                        </div>
-                        <div class="list__field" id="product__quantity">
-                            52
-                        </div>
-                    </li>
-                    <li class="list__item">
-                        <div class="list__field" id="product__identifier">
-                            00000002
-                        </div>
-                        <div class="list__field" id="product__title">
-                            Rustic Coffee Table
-                        </div>
-                        <div class="list__field" id="product__description">
-                            A sturdy and charming coffee table made from reclaimed wood
-                        </div>
-                        <div class="list__field" id="product__quantity">
-                            16
-                        </div>
-                    </li>
+                    <c:forEach items="${storageTruckProductList}" var="truckProduct">
+                        <li class="list__item">
+                            <div class="list__field" id="product__identifier">
+                                <p>${truckProduct.getTruckIdentifier()}</p>
+                            </div>
+                            <div class="list__field" id="product__title">
+                                <p>${truckProduct.getTitle()}</p>
+                            </div>
+                            <div class="list__field" id="product__description">
+                                <p>${truckProduct.getDescription()}</p>
+                            </div>
+                            <div class="list__field" id="product__quantity">
+                                <p>${truckProduct.getQuantity()}</p>
+                            </div>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
         </div>

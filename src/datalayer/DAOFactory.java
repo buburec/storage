@@ -1,5 +1,7 @@
 package datalayer;
 
+import datalayer.daointerface.*;
+
 public abstract class DAOFactory {
     public static DAOFactory getInstance(DBType dbType) {
         DAOFactory result = dbType.getDAOFactory();
@@ -10,9 +12,17 @@ public abstract class DAOFactory {
 
     }
 
-//    public abstract LecturerListDAO getGroupLecturersDAO();
+    public abstract EmployeeDAO getEmployeeDAO();
 
-//    public abstract HourLoadDAO getHourLoadDAO();
+    public abstract OccupationDAO getOccupationDAO();
 
-//    public abstract PeriodLoadDAO getPeriodLoadDAO();
+    public abstract TruckRequestDAO getTruckRequestDAO();
+
+    public abstract StorageProductDAO getStorageProductDAO();
+
+    public abstract TruckMovementDAO getTruckMovementDAO();
+
+    public abstract TruckDAO getTruckDAO();
+
+    public abstract ProductDAO getProductDAO();
 }

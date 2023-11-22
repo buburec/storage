@@ -27,8 +27,7 @@
             </li>
             <li class="heading__item">
                 <form name="adminOccupationsForm" method="POST" action="/storage/occupation-list">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.admin.occupation_list" />
+                    <input type="hidden" name="command" value="occupations" />
                     <input type="submit" name="occupationSubmit" value="Occupations">
                 </form>
             </li>
@@ -43,7 +42,7 @@
             </li>
             <li class="heading__item">
                 <form name="adminProfileForm" method="POST" action="/storage/profile">
-                    <input type="hidden" name="command" value="forward" />
+                    <input type="hidden" name="command" value="profile" />
                     <input type="hidden" name="visibility" value="hidden" />
                     <input type="hidden" name="page" value="path.page.admin.profile" />
                     <input type="submit" name="profileSubmit" value="Profile">
@@ -62,47 +61,34 @@
         <div class="content__wrapper">
             <h1>Profile</h1>
             <div class="info__wrapper">
-                <ul class="info__list">
-                    <li class="info__item">
-                        <div class="info__blocked-field">
-                            <form>
-                                <input type="text" value="${user.getIdentifier()}" required>
-                            </form>
-                            <label>Identifier</label>
-                        </div>
-                        <div class="info__blocked-field">
-                            <form>
-                                <input type="text" value="${user.getOccupation()}" required>
-                            </form>
-                            <label>Occupation</label>
-                        </div>
-                    </li>
-                    <li class="info__item">  
-                        <div class="info__field">
-                            <form>
-                                <input type="text" value="${user.getFullName().split(" ")[0]}" placeholder="Full name" required>
-                            </form>
-                            <label>First name</label>
-                        </div>
-                        <div class="info__field">
-                            <form>
-                                <input type="text" value="${user.getFullName().split(" ")[1]}" placeholder="Last name" required>
-                            </form>
-                            <label>Last name</label>
-                        </div>
-                    </li>
-                    <li class="info__item">
-                        <form>
+                <form name="adminUpdateProfileForm" method="POST" action="/storage/profile">
+                    <ul class="info__list">
+                        <li class="info__item">
+                            <div class="info__blocked-field">
+                                <input type="text" name="identifier" value="${profile.get(0).getIdentifier()}" required>
+                                <label>Login</label>
+                            </div>
+                            <div class="info__field">
+                                <input type="text" name="password" value="${profile.get(0).getPassword()}" required>
+                                <label>Password</label>
+                            </div>
+                        </li>
+                        <li class="info__item">
+                            <div class="info__blocked-field">
+                                <input type="text" value="${profile.get(0).getTitle()}" required>
+                                <label>Occupation</label>
+                            </div>
+                            <div class="info__field">
+                                <input type="text" name="fullName" value="${profile.get(0).getFullName()}" required>                                    <label>Full name</label>
+                            </div>
+                        </li>
+                        <li class="info__item">
+                            <input type="hidden" name="command" value="update_profile" />
+                            <input type="hidden" name="page" value="path.page.admin.profile" />
                             <input type="submit" name="saveSubmit" value="Save changes">
-                        </form>
-                        <form>
-                            <input type="${visibility}" name="deleteSubmit" value="Delete account">
-                        </form>
-                        <form>
-                            <input type="${visibility}" name="cancelSubmit" value="Cancel">
-                        </form>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </form>
             </div>
         </div>
     </div>

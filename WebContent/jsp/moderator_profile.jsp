@@ -61,44 +61,39 @@
         <div class="content__wrapper">
             <h1>Profile</h1>
             <div class="info__wrapper">
+            <form name="moderatorUpdateProfileForm" method="POST" action="/storage/profile">
                 <ul class="info__list">
                     <li class="info__item">
                         <div class="info__blocked-field">
-                            <form>
-                                <input type="text" value="${user.getIdentifier()}" required>
-                            </form>
-                            <label>Identifier</label>
+                            <input type="text" value="${profile.get(0).getIdentifier()}" required>
+                            <label>Login</label>
                         </div>
+                        <div class="info__field">
+                            <input type="text" value="${profile.get(0).getPassword()}" required>
+                            <label>Password</label>
+                        </div>
+                    </li>
+                    <li class="info__item">
                         <div class="info__blocked-field">
-                            <form>
-                                <input type="text" value="${user.getOccupation()}" required>
-                            </form>
+                            <input type="text" value="${profile.get(0).getTitle()}" required>
                             <label>Occupation</label>
                         </div>
-                    </li>
-                    <li class="info__item">
                         <div class="info__field">
-                            <form>
-                                <input type="text" value="${user.getFullName().split(" ")[0]}" placeholder="Full name" required>
-                            </form>
-                            <label>First name</label>
-                        </div>
-                        <div class="info__field">
-                            <form>
-                                <input type="text" value="${user.getFullName().split(" ")[1]}" placeholder="Last name" required>
-                            </form>
-                            <label>Last name</label>
+                            <input type="text" value="${profile.get(0).getFullName()}" required>
+                            <label>Full name</label>
                         </div>
                     </li>
                     <li class="info__item">
+                        <input type="hidden" name="command" value="update_profile" />
+                        <input type="hidden" name="visibility" value="hidden" />
+                        <input type="hidden" name="page" value="path.page.moderator.profile" />
+                        <input type="submit" name="saveSubmit" value="Save changes">
                         <form>
-                            <input type="submit" name="saveSubmit" value="Save changes">
-                        </form>
-                        <form>
-                            <input type="submit" name="blockSubmit" value="Block account">
+                            <input type="${visibility}" name="blockSubmit" value="Block account">
                         </form>
                     </li>
                 </ul>
+            </form>
             </div>
         </div>
     </div>

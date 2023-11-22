@@ -1,15 +1,14 @@
 package datalayer.oracledb;
 
 import datalayer.DAOFactory;
+import datalayer.daointerface.*;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Locale;
 
 public class OracleDBDAOFactory extends DAOFactory {
     private static volatile OracleDBDAOFactory instance;
@@ -48,18 +47,38 @@ public class OracleDBDAOFactory extends DAOFactory {
         }
     }
 
-//    @Override
-//    public LecturerListDAO getGroupLecturersDAO() {
-//        return new OracleLecturerListDAO(connection);
-//    }
-//
-//    @Override
-//    public HourLoadDAO getHourLoadDAO() {
-//        return new OracleHourLoadDAO(connection);
-//    }
-//
-//    @Override
-//    public PeriodLoadDAO getPeriodLoadDAO() {
-//        return new OraclePeriodLoadDAO(connection);
-//    }
+    @Override
+    public EmployeeDAO getEmployeeDAO() {
+        return new OracleEmployeeDAO(connection);
+    }
+
+    @Override
+    public OccupationDAO getOccupationDAO() {
+        return new OracleOccupationDAO(connection);
+    }
+
+    @Override
+    public TruckRequestDAO getTruckRequestDAO() {
+        return new OracleTruckRequestDAO(connection);
+    }
+
+    @Override
+    public StorageProductDAO getStorageProductDAO() {
+        return new OracleStorageProductDAO(connection);
+    }
+
+    @Override
+    public TruckMovementDAO getTruckMovementDAO() {
+        return new OracleTruckMovementDAO(connection);
+    }
+
+    @Override
+    public TruckDAO getTruckDAO() {
+        return null;
+    }
+
+    @Override
+    public ProductDAO getProductDAO() {
+        return new OracleProductDAO(connection);
+    }
 }

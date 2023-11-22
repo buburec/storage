@@ -2,10 +2,10 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/FrontController/Controller.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/FrontController/SessionRequestContent.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/FrontController/command/EmptyCommand.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/FrontController/command/LogoutCommand.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/FrontController/command/factory/ActionFactory.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/controller/FrontController.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/controller/SessionRequestContent.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/controller/command/EmptyCommand.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/controller/command/LogoutCommand.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/controller/command/factory/ActionFactory.java" charset="windows-1251" />
   </component>
 </project>

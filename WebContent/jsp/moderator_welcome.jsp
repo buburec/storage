@@ -37,7 +37,8 @@
             </li>
             <li class="heading__item">
                 <form name="moderatorProfileForm" method="POST" action="/storage/profile">
-                    <input type="hidden" name="command" value="forward" />
+                    <input type="hidden" name="command" value="profile" />
+                    <input type="hidden" name="visibility" value="hidden" />
                     <input type="hidden" name="page" value="path.page.moderator.profile" />
                     <input type="submit" name="profileSubmit" value="Profile">
                 </form>

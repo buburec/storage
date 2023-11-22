@@ -59,9 +59,12 @@
             <div class="list__wrapper">
                 <ul>
                     <form name="driverCreateRequestForm" method="POST" action="/storage/request-list/create-request">
-                        <input type="hidden" name="command" value="forward" />
-                        <input type="hidden" name="page" value="path.page.driver.request_creating" />
-                        <input type="submit" name="createSubmit" value="Create new" class="content__submit">
+                        <input type="hidden" name="command" value="create_driver_request" />
+                        <input type="submit" name="createSubmit" value="Create movement" class="content__submit">
+                    </form>
+                    <form name="driverCreateRequestForm" method="POST" action="/storage/request-list/create-request">
+                        <input type="hidden" name="command" value="create_driver_request" />
+                        <input type="submit" name="createSubmit" value="Create request" class="content__submit">
                     </form>
                     <c:forEach items="${requestList}" var="request">
                         <li class="list__item">

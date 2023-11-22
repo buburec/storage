@@ -61,29 +61,29 @@
                     <li class="info__item">
                         <div class="info__blocked-field">
                             <form>
-                                <input type="text" value="00000004" required>
+                                <input type="text" value="bob_driver99" required>
                             </form>
-                            <label>Identifier</label>
+                            <label>Login</label>
                         </div>
+                        <div class="info__field">
+                            <form>
+                                <input type="text" value="1" required>
+                            </form>
+                            <label>Password</label>
+                        </div>
+                    </li>
+                    <li class="info__item">
                         <div class="info__blocked-field">
                             <form>
                                 <input type="text" value="Driver" required>
                             </form>
                             <label>Occupation</label>
                         </div>
-                    </li>
-                    <li class="info__item">  
                         <div class="info__field">
                             <form>
-                                <input type="text" value="Bob" placeholder="First name" required>
+                                <input type="text" value="Bob Brown" required>
                             </form>
-                            <label>First name</label>
-                        </div>
-                        <div class="info__field">
-                            <form>
-                                <input type="text" value="Brown" placeholder="Last name" required>
-                            </form>
-                            <label>Last name</label>
+                            <label>Full name</label>
                         </div>
                     </li>
                     <li class="info__item">
@@ -109,7 +109,9 @@
                         <div class="list__field" id="truck__status">
                             inside
                         </div>
-                        <form>
+                        <form name="driverTruckForm" method="POST" action="/storage/truck">
+                            <input type="hidden" name="command" value="forward" />
+                            <input type="hidden" name="page" value="path.page.driver.truck" />
                             <input type="submit" value="" id="truck__picture">
                         </form>
                     </li>

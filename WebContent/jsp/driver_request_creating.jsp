@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,46 @@
     <link rel="stylesheet" href="../css/reset.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/info.css" type="text/css">
+    <link rel="stylesheet" href="../css/list.css" type="text/css">
+    <style>
+        /* Стили для вкладок */
+        .tabs {
+          display: flex;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .tab {
+          margin-right: 10px;
+          cursor: pointer;
+          padding: 8px 16px;
+          border: 1px solid #ccc;
+          border-radius: 5px 5px 0 0;
+          background-color: #f2f2f2;
+        }
+
+        .tab:hover {
+          background-color: #ddd;
+        }
+
+        .tab.active {
+          background-color: #fff;
+          border-bottom: 1px solid #fff;
+        }
+
+        /* Скрытие контента вкладок */
+        .tab-content {
+          display: none;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 0 0 5px 5px;
+        }
+
+        .tab-content.active {
+          display: block;
+        }
+  </style>
 </head>
 <body>
     <header class="heading__wrapper">
@@ -56,46 +97,141 @@
         <div class="content__wrapper">
             <h1>Request creating</h1>
             <div class="info__wrapper">
-                <ul>
-                    <li class="info__item">  
-                        <div class="info__select-field">
-                            <form>
-                                <select required>
-                                    <option>Entry</option>
-                                    <option>Loading</option>
-                                    <option>Unloading</option>
-                                </select>
-                            </form>
-                            <label>Topic</label>
-                        </div>
-                        <div class="info__select-field">
-                            <form>
-                                <select required>
-                                    <option>О753ХС95</option>
-                                </select>
-                            </form>
-                            <label>Truck</label>
-                        </div>
-                    </li>
-                    <li class="info__item">
-                        <div class="info__commentary-field">
-                            <form>
-                                <textarea></textarea>
-                            </form>
-                            <label>Commentary</label>
-                        </div>
-                    </li>
-                    <li class="info__item">
-                        <form>
-                            <input type="submit" name="createSubmit" value="Create">
-                        </form>
-                        <form>
-                            <input type="submit" name="cancelSubmit" value="Cancel">
-                        </form>
-                    </li>
+                <ul class="tabs">
+                    <li class="tab" onclick="showTab('tab1')">Movement</li>
+                    <li class="tab" onclick="showTab('tab2')">Loading</li>
+                    <li class="tab" onclick="showTab('tab3')">Unloading</li>
                 </ul>
+                <div id="tab1" class="tab-content active">
+                    <li class="info__item">
+                    <form name="driverEntryRequestForm" method="POST" action="/storage/request-list/create-request">
+                        <input type="hidden" name="command" value="entry_request" />
+                        <input type="submit" name="createSubmit" value="Entry request">
+                    </form>
+                    <form name="driverExitRequestForm" method="POST" action="/storage/request-list/create-request">
+                        <input type="hidden" name="command" value="exit_request" />
+                        <input type="submit" name="createSubmit" value="Exit request">
+                    </form>
+                    </li>
+                    <form name="driverCreateRequestForm" method="POST" action="/storage/request-list/create-request">
+                        <ul>
+                            <li class="info__item">
+                                <div class="info__select-field">
+                                    <select required name="truckIdentifier">
+                                        <c:forEach items="${truckIdentifierList}" var="truck">
+                                            <option><p>${truck.getTruckIdentifier()}</p></option>
+                                        </c:forEach>
+                                    </select>
+                                    <label>Truck</label>
+                                </div>
+                                <div class="info__select-field">
+                                    <select name="selectedProducts">
+                                        <c:forEach items="${productList}" var="product">
+                                            <option><p>${product.getTitle()}</p></option>
+                                        </c:forEach>
+                                    </select>
+                                    <input type="number" name="quantity" id="quantity" min="0" max="100" step="1" value="0">
+                                     <input type="submit" name="createSubmit" value="Tick">
+                                </div>
+
+                           </li>
+                            <li class="info__item">
+                                <div class="info__commentary-field">
+                                    <textarea name="commentary"></textarea>
+                                    <label>Commentary</label>
+                                </div>
+                            </li>
+                            <li class="info__item">
+                                <input type="hidden" name="command" value="entry_request" />
+                                <input type="submit" name="createSubmit" value="Create">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div id="tab2" class="tab-content">
+                    <form name="driverCreateRequestForm" method="POST" action="/storage/request-list/create-request">
+                        <ul>
+                            <li class="info__item">
+                                <div class="info__select-field">
+                                    <select required name="truckIdentifier">
+                                        <option>О753ХС95</option>
+                                    </select>
+                                    <label>Truck</label>
+                                </div>
+                                <div class="info__select-field">
+                                    <select required name="trucksProduct">
+                                        <option>Chair</option>
+                                    </select>
+                                    <label>Trucks product</label>
+                                </div>
+                            </li>
+                            <li class="info__item">
+                                <div class="info__commentary-field">
+                                    <textarea name="commentary"></textarea>
+                                    <label>Commentary</label>
+                                </div>
+                            </li>
+                            <li class="info__item">
+                                <input type="hidden" name="command" value="entry_request" />
+                                <input type="submit" name="createSubmit" value="Create">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div id="tab3" class="tab-content">
+                    <form>
+                        <ul>
+                            <li class="info__item">
+                                <div class="info__select-field">
+                                    <select required>
+                                        <option>О753ХС95</option>
+                                    </select>
+                                    <label>Truck</label>
+                                </div>
+                                <div class="info__select-field">
+                                    <select required>
+                                        <option>Chair</option>
+                                    </select>
+                                    <label>Storage product</label>
+                                </div>
+                            </li>
+                            <li class="info__item">
+                                <div class="info__commentary-field">
+                                    <textarea></textarea>
+                                    <label>Commentary</label>
+                                </div>
+                            </li>
+                            <li class="info__item">
+                                <input type="submit" name="createSubmit" value="Create">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
+    </div>
+    <script>
+        function showTab(tabId) {
+            // Скрыть все вкладки и сделать неактивными
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+              tab.classList.remove('active');
+            });
+
+            // Показать выбранную вкладку и сделать ее активной
+            document.getElementById(tabId).classList.add('active');
+
+            // Убрать класс 'active' у всех вкладок
+            var tabButtons = document.querySelectorAll('.tab');
+            tabButtons.forEach(function(button) {
+              button.classList.remove('active');
+            });
+
+            // Добавить класс 'active' к выбранной вкладке
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>

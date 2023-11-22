@@ -67,7 +67,7 @@
                                 <p>${user.getFullName()}</p>
                             </div>
                             <div class="list__field" id="user__occupation">
-                                <p>${user.getOccupation()}</p>
+                                <p>${user.getTitle()}</p>
                             </div>
                             <div class="list__field" id="user__status">
                                 <p>${user.getStatus()}</p>
@@ -75,10 +75,6 @@
                             <form name="adminEditUser" method="POST" action="/storage/user-list/edit-user">
                                 <input type="hidden" name="command" value="edit_user" />
                                 <input type="hidden" name="user_identifier" value="${user.getIdentifier()}">
-                                <input type="hidden" name="user_fullName" value="${user.getFullName()}">
-                                <input type="hidden" name="user_occupation" value="${user.getOccupation()}">
-                                <input type="hidden" name="user_status" value="${user.getStatus()}">
-                                <input type="hidden" name="visibility" value="submit" />
                                 <input type="hidden" name="page" value="path.page.moderator.profile" />
                                 <input type="submit" value="" id="user__picture">
                             </form>

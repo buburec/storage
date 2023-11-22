@@ -23,8 +23,7 @@
            </li>
            <li class="heading__item">
                <form name="adminOccupationsForm" method="POST" action="/storage/occupation-list">
-                   <input type="hidden" name="command" value="forward" />
-                   <input type="hidden" name="page" value="path.page.admin.occupation_list" />
+                   <input type="hidden" name="command" value="occupations" />
                    <input type="submit" name="occupationSubmit" value="Occupations">
                </form>
            </li>
@@ -39,7 +38,7 @@
            </li>
            <li class="heading__item">
                <form name="adminProfileForm" method="POST" action="/storage/profile">
-                   <input type="hidden" name="command" value="forward" />
+                   <input type="hidden" name="command" value="profile" />
                    <input type="hidden" name="visibility" value="hidden" />
                    <input type="hidden" name="page" value="path.page.admin.profile" />
                    <input type="submit" name="profileSubmit" value="Profile">
@@ -73,7 +72,7 @@
                                 <p>${user.getFullName()}</p>
                             </div>
                             <div class="list__field" id="user__occupation">
-                                <p>${user.getOccupation()}</p>
+                                <p>${user.getTitle()}</p>
                             </div>
                             <div class="list__field" id="user__status">
                                 <p>${user.getStatus()}</p>
@@ -81,11 +80,14 @@
                             <form name="adminEditUser" method="POST" action="/storage/user-list/edit-user">
                                 <input type="hidden" name="command" value="edit_user" />
                                 <input type="hidden" name="user_identifier" value="${user.getIdentifier()}">
-                                <input type="hidden" name="user_fullName" value="${user.getFullName()}">
-                                <input type="hidden" name="user_occupation" value="${user.getOccupation()}">
-                                <input type="hidden" name="user_status" value="${user.getStatus()}">
-                                <input type="hidden" name="visibility" value="submit" />
-                                <input type="hidden" name="page" value="path.page.admin.profile" />
+                                <c:choose>
+                                    <c:when test="${user.getIdentifier() eq identifier}">
+                                        <input type="hidden" name="page" value="path.page.admin.profile" />
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input type="hidden" name="page" value="path.page.admin.user_profile" />
+                                    </c:otherwise>
+                                </c:choose>
                                 <input type="submit" value="" id="user__picture">
                             </form>
                         </li>

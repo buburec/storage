@@ -23,8 +23,7 @@
             </li>
             <li class="heading__item">
                 <form name="moderatorProductsForm" method="POST" action="/storage/product-list">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.moderator.product_list" />
+                    <input type="hidden" name="command" value="product_list" />
                     <input type="submit" name="productsSubmit" value="Products">
                 </form>
             </li>
@@ -72,10 +71,18 @@
                             <div class="list__field" id="user__status">
                                 <p>${user.getStatus()}</p>
                             </div>
-                            <form name="adminEditUser" method="POST" action="/storage/user-list/edit-user">
+                            <form name="moderatorEditUser" method="POST" action="/storage/user-list/edit-user">
                                 <input type="hidden" name="command" value="edit_user" />
                                 <input type="hidden" name="user_identifier" value="${user.getIdentifier()}">
-                                <input type="hidden" name="page" value="path.page.moderator.profile" />
+                                <c:choose>
+                                    <c:when test="${user.getIdentifier() eq identifier}">
+                                        <input type="hidden" name="page" value="path.page.moderator.profile" />
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input type="hidden" name="status" value="${user.getStatus()}">
+                                        <input type="hidden" name="page" value="path.page.moderator.user_profile" />
+                                    </c:otherwise>
+                                </c:choose>
                                 <input type="submit" value="" id="user__picture">
                             </form>
                         </li>

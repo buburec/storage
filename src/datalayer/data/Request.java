@@ -9,6 +9,19 @@ public class Request {
     private Date sentDate;
     private String resolver;
     private String status;
+    private String commentary;
+    private String resolverResponse;
+    private String truckIdentifier;
+
+    public Request(int identifier, String truckIdentifier, String commentary, String topic, String status, String resolverResponse, String resolver) {
+        this.identifier = identifier;
+        this.topic = topic;
+        this.status = status;
+        this.commentary = commentary;
+        this.resolverResponse = resolverResponse;
+        this.truckIdentifier = truckIdentifier;
+        this.resolver = resolver;
+    }
 
     public Request(int identifier, String truckModel, String topic, Date sentDate, String resolver, String status) {
         this.identifier = identifier;
@@ -43,8 +56,8 @@ public class Request {
         this.status = status;
     }
 
-    public int getIdentifier() {
-        return identifier;
+    public String getIdentifier() {
+        return String.format("%010d", identifier);
     }
 
     public String getTruckModel() {
@@ -65,5 +78,29 @@ public class Request {
 
     public String getStatus() {
         return status;
+    }
+
+    public String getCommentary() {
+        return commentary;
+    }
+
+    public void setCommentary(String commentary) {
+        this.commentary = commentary;
+    }
+
+    public String getResolverResponse() {
+        return resolverResponse;
+    }
+
+    public void setResolverResponse(String resolverResponse) {
+        this.resolverResponse = resolverResponse;
+    }
+
+    public String getTruckIdentifier() {
+        return truckIdentifier;
+    }
+
+    public void setTruckIdentifier(String truckIdentifier) {
+        this.truckIdentifier = truckIdentifier;
     }
 }

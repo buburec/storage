@@ -5,12 +5,14 @@ public class ProfileData {
     private String password;
     private String fullName;
     private String title;
+    private String status;
 
-    public ProfileData(String identifier, String password, String fullName, String title) {
+    public ProfileData(String identifier, String password, String fullName, String title, String status) {
         this.identifier = identifier;
         this.password = password;
         this.fullName = fullName;
         this.title = title;
+        this.status = status;
     }
 
     public String getIdentifier() {
@@ -43,6 +45,14 @@ public class ProfileData {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
 

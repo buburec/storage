@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +16,13 @@
         <ul class="heading__list">
             <li class="heading__item">
                 <form name="storekeeperTrucksForm" method="POST" action="/storage/truck-list">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.storekeeper.truck_list" />
+                    <input type="hidden" name="command" value="storekeeper_truck_list" />
                     <input type="submit" name="trucksSubmit" value="Trucks">
                 </form>
             </li>
             <li class="heading__item">
                 <form name="storekeeperRequestsForm" method="POST" action="/storage/request-list">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.storekeeper.request_list" />
+                    <input type="hidden" name="command" value="storekeeper_requests" />
                     <input type="submit" name="requestsSubmit" value="Requests">
                 </form>
             </li>
@@ -38,7 +37,7 @@
             </li>
             <li class="heading__item">
                 <form name="storekeeperProfileForm" method="POST" action="/storage/profile">
-                    <input type="hidden" name="command" value="forward" />
+                    <input type="hidden" name="command" value="profile" />
                     <input type="hidden" name="page" value="path.page.storekeeper.profile" />
                     <input type="submit" name="profileSubmit" value="Profile">
                 </form>
@@ -56,41 +55,34 @@
         <div class="content__wrapper">
             <h1>Profile</h1>
             <div class="info__wrapper">
-                <ul class="info__list">
-                    <li class="info__item">
-                        <div class="info__blocked-field">
-                            <form>
-                                <input type="text" value="00000002" required>
-                            </form>
-                            <label>Identifier</label>
-                        </div>
-                        <div class="info__blocked-field">
-                            <form>
-                                <input type="text" value="Storekeeper" required>
-                            </form>
-                            <label>Occupation</label>
-                        </div>
-                    </li>
-                    <li class="info__item">  
-                        <div class="info__field">
-                            <form>
-                                <input type="text" value="Alice" placeholder="First name" required>
-                            </form>
-                            <label>First name</label>
-                        </div>
-                        <div class="info__field">
-                            <form>
-                                <input type="text" value="Johnson" placeholder="Last name" required>
-                            </form>
-                            <label>Last name</label>
-                        </div>
-                    </li>
-                    <li class="info__item">
-                        <form>
+                <form name="adminUpdateProfileForm" method="POST" action="/storage/profile">
+                    <ul class="info__list">
+                        <li class="info__item">
+                            <div class="info__blocked-field">
+                                <input type="text" name="identifier" value="${profile.get(0).getIdentifier()}" required>
+                                <label>Login</label>
+                            </div>
+                            <div class="info__field">
+                                <input type="text" name="password" value="${profile.get(0).getPassword()}" required>
+                                <label>Password</label>
+                            </div>
+                        </li>
+                        <li class="info__item">
+                            <div class="info__blocked-field">
+                                <input type="text" value="${profile.get(0).getTitle()}" required>
+                                <label>Occupation</label>
+                            </div>
+                            <div class="info__field">
+                                <input type="text" name="fullName" value="${profile.get(0).getFullName()}" required>                                    <label>Full name</label>
+                            </div>
+                        </li>
+                        <li class="info__item">
+                            <input type="hidden" name="command" value="update_profile" />
+                            <input type="hidden" name="page" value="path.page.storekeeper.profile" />
                             <input type="submit" name="saveSubmit" value="Save changes">
-                        </form>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </form>
             </div>
         </div>
     </div>

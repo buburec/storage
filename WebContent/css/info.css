@@ -4,14 +4,43 @@
     /* border: 1px solid black; */
     width: 75%;
     background: lightsalmon;
+    position: relative;
 
     justify-content: center;
     overflow: hidden;
     flex-wrap: wrap;
 }
 
-form[name="adminUpdateProfileForm"] {
-    width: 75%;
+.info__wrapper input[type="submit"] {
+    /* border: 1px solid black; */
+    padding: 10px;
+    margin: 10px;
+    height: 50px;
+    width: 200px;
+    background: oldlace;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: inherit;
+    overflow: inherit;
+}
+
+.info__wrapper input[type="submit"]:hover {
+    background: navajowhite;
+    font-weight: 700;
+    border-radius: 18px;
+    font-size: 18px;
+    transition: .5s;
+}
+
+.info__extra-submit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 .info__list {
@@ -30,30 +59,32 @@ form[name="adminUpdateProfileForm"] {
     overflow: inherit;
 }
 
-.info__item input[type="submit"] {
+.info__item form {
     /* border: 1px solid black; */
-    padding: 10px;
-    margin: 10px;
-    height: 50px;
-    width: 200px;
-    background: oldlace;
-    font-weight: 600;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    cursor: pointer;
-
-    font-family: inherit;
-    font-size: inherit;
+    width: 100%;
+    
+    justify-content: inherit;
+    display: inherit;
+    flex-wrap: inherit;
     overflow: inherit;
 }
 
-.info__item input[type="submit"]:hover {
-    background: navajowhite;
-    font-weight: 700;
-    border-radius: 18px;
-    font-size: 18px;
-    transition: .5s;
+.info__item form[name="driverDeleteWaybillProductForm"] {
+    width: auto;
+}
+
+.info__item input[type="number"] {
+    border: transparent;
+    /* border: 1px solid black; */
+    border-radius: 6px;
+    padding: 10px;
+    margin: 10px;
+    width: 80px;
+    height: 40px;
+    background: oldlace;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .info__field {
@@ -69,12 +100,9 @@ form[name="adminUpdateProfileForm"] {
     overflow: inherit;
 }
 
-.info__field {
-    width: 100%;
-}
-
 .info__field label {
-    /*border: 1px solid black;*/
+    /* border: 1px solid black; */
+    width: 100%;
     padding-top: 6px;
 
     font-weight: inherit;
@@ -110,12 +138,9 @@ form[name="adminUpdateProfileForm"] {
     overflow: inherit;
 }
 
-.info__blocked-field form {
-    width: 100%;
-}
-
 .info__blocked-field label {
-    /*border: 1px solid black;*/
+    /* border: 1px solid black; */
+    width: 100%;
     padding-top: 6px;
 
     font-weight: inherit;
@@ -151,12 +176,9 @@ form[name="adminUpdateProfileForm"] {
     overflow: inherit;
 }
 
-.info__select-field form {
-    width: 100%;
-}
-
 .info__select-field label {
     /*border: 1px solid black;*/
+    width: 100%;
     font-weight: 600;
     font-size: 20px;
     padding-top: 6px;
@@ -220,17 +242,7 @@ form[name="adminUpdateProfileForm"] {
     /*border: 1px solid black;*/
 }
 
-.info__trucks__wrapper form {
-    width: 60%;
-    /*border: 1px solid black;*/
-
-    justify-content: center;
-    overflow: hidden;
-    flex-wrap: wrap;
-    overflow: inherit;
-}
-
-.info__trucks__wrapper form input[type="submit"] {
+.info__trucks__wrapper input[type="submit"] {
     border: 4px solid black;
     padding: 10px;
     margin: 10px;
@@ -247,7 +259,7 @@ form[name="adminUpdateProfileForm"] {
     overflow: inherit;
 }
 
-.info__trucks__wrapper form input[type="submit"]:hover {
+.info__trucks__wrapper input[type="submit"]:hover {
     background: navajowhite;
     font-weight: 700;
     border-radius: 18px;
@@ -300,9 +312,9 @@ form[name="adminUpdateProfileForm"] {
 }
 
 .info__commentary-field {
+    /* border: 1px solid black; */
     width: 90%;
     text-align: left;
-    /* border: 1px solid black; */
     font-weight: 500;
     font-size: 18px;
 
@@ -311,12 +323,13 @@ form[name="adminUpdateProfileForm"] {
     overflow: inherit;
 }
 
-.info__commentary-field form {
-    width: 90%;
+.info__commentary-field textarea {
+    border: transparent;
 }
 
 .info__commentary-field label {
-    /*border: 1px solid black;*/
+    /* border: 1px solid black; */
+    width: 100%;
     padding-top: 6px;
     font-weight: 600;
     font-size: 20px;
@@ -332,7 +345,7 @@ form[name="adminUpdateProfileForm"] {
     border-radius: 6px;
     border: transparent;
     /*border: 1px solid black;*/
-    width: 100%;
+    width: 320%;
     resize: none;
     overflow-wrap: break-word;
     cursor: text;
@@ -340,4 +353,120 @@ form[name="adminUpdateProfileForm"] {
     font-weight: inherit;
     font-size: inherit;
     overflow: inherit;
+}
+
+.info__product__list {
+    /* border: 1px solid black; */
+    background: oldlace;
+    border-radius: 6px;
+    width: 75%;
+
+    justify-content: inherit;
+    flex-wrap: inherit;
+    overflow: inherit;
+}
+
+.info__product__item {
+    margin-left: 16px;
+    margin-right: 16px;
+    height: 60px;
+    border-top: 2px solid black;
+
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: inherit;
+}
+
+.info__product__field {
+    /* border: 1px solid black; */
+    margin: 8px;
+    padding: 6px;
+    padding-left: 12px;
+    text-align: left;
+    border-left: 2px solid black;
+    font-weight: 600;
+    font-size: 20px;
+    height: 50%;
+    
+    justify-content: center;
+    flex-wrap: inherit;
+    overflow: inherit;
+}
+
+#product__delete input[type="submit"] {
+    /* border: 2px solid black; */
+    border-radius: 8px;
+    margin: 0px;
+    margin-left: 10px;
+    padding: 0px;
+    font-weight: 600;
+    font-size: 16px;
+    background: oldlace;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/delete.svg);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    overflow: inherit;
+}
+
+#product__delete input[type="submit"]:hover {
+    background: tomato;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/delete.svg);
+    cursor: pointer;
+
+    overflow: inherit;
+}
+
+#product__add input[type="submit"] {
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    margin: 10px;
+    padding: 0px;
+    font-weight: 600;
+    font-size: 16px;
+    background: oldlace;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/add.svg);
+    background-size: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    overflow: inherit;
+}
+
+#product__add input[type="submit"]:hover {
+    background: lightgreen;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/add.svg);
+    background-size: 30px;
+    cursor: pointer;
+
+    overflow: inherit;
+}
+
+#product__identifier.info__product__field {
+    width: 8%;
+    border-left: transparent;
+}
+
+#product__title.info__product__field {
+    width: 54%;
+}
+
+#product__quantity.info__product__field {
+    width: auto;
+}
+
+#product__delete.info__product__field {
+    border-left: 2px solid black;
+    border-right: transparent;
 }

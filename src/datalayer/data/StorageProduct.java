@@ -13,8 +13,8 @@ public class StorageProduct {
         this.quantity = quantity;
     }
 
-    public int getIdentifier() {
-        return identifier;
+    public String getIdentifier() {
+        return String.format("%08d", identifier);
     }
 
     public void setIdentifier(int identifier) {

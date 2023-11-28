@@ -20,9 +20,9 @@ public abstract class DAOFactory {
 
     public abstract StorageProductDAO getStorageProductDAO();
 
-    public abstract TruckMovementDAO getTruckMovementDAO();
-
     public abstract TruckDAO getTruckDAO();
 
     public abstract ProductDAO getProductDAO();
+
+    public abstract TruckWaybillDAO getTruckWaybillDAO();
 }

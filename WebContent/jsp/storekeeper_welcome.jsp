@@ -14,15 +14,13 @@
         <ul class="heading__list">
             <li class="heading__item">
                 <form name="storekeeperTrucksForm" method="POST" action="/storage/truck-list">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.storekeeper.truck_list" />
+                    <input type="hidden" name="command" value="storekeeper_truck_list" />
                     <input type="submit" name="trucksSubmit" value="Trucks">
                 </form>
             </li>
             <li class="heading__item">
                 <form name="storekeeperRequestsForm" method="POST" action="/storage/request-list">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.storekeeper.request_list" />
+                    <input type="hidden" name="command" value="storekeeper_requests" />
                     <input type="submit" name="requestsSubmit" value="Requests">
                 </form>
             </li>
@@ -37,7 +35,7 @@
             </li>
             <li class="heading__item">
                 <form name="storekeeperProfileForm" method="POST" action="/storage/profile">
-                    <input type="hidden" name="command" value="forward" />
+                    <input type="hidden" name="command" value="profile" />
                     <input type="hidden" name="page" value="path.page.storekeeper.profile" />
                     <input type="submit" name="profileSubmit" value="Profile">
                 </form>

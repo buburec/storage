@@ -21,7 +21,7 @@ public class UpdateProfileCommand implements ActionCommand {
         employeeDAO.updateProfile(password, fullName, identifier);
         List<ProfileData> profile = employeeDAO.getProfile(identifier);
         request.setAttribute("profile", profile);
-        page = ConfigurationManager.getProperty(request.getParameter("page"));
+        page = ConfigurationManager.getProperty("path.page.driver.");
         return page;
     }
 }

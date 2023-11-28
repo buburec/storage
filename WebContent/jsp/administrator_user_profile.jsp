@@ -61,7 +61,7 @@
        <div class="content__wrapper">
            <h1>Profile</h1>
            <div class="info__wrapper">
-               <form name="adminUpdateProfileForm" method="POST" action="/storage/profile">
+                <form name="adminUpdateProfileForm" method="POST" action="/storage/profile">
                    <ul class="info__list">
                        <li class="info__item">
                            <div class="info__blocked-field">
@@ -91,17 +91,12 @@
                    </ul>
                </form>
                <form name="adminDeleteProfileForm" method="POST" action="/storage/user-list">
-                   <ul class="info__list">
-                       <li class="info__item">
-                           <input type="hidden" name="command" value="delete_user" />
-                           <input type="hidden" name="identifier" value="${profile.get(0).getIdentifier()}" />
-                           <input type="submit" name="deleteSubmit" value="Delete account">
-                       </li>
-                   </ul>
+                    <input type="hidden" name="command" value="delete_user" />
+                    <input type="hidden" name="identifier" value="${profile.get(0).getIdentifier()}" />
+                    <input type="submit" name="deleteSubmit" value="Delete account" class="info__extra-submit">
                </form>
            </div>
        </div>
    </div>
-
 </body>
 </html>

@@ -1,6 +1,7 @@
 .list__wrapper {
     /* border: 1px solid black; */
     width: 75%;
+    position: relative;
 
     justify-content: center;
     overflow: hidden;
@@ -32,15 +33,6 @@
     overflow: inherit;
 }
 
-.list__item form {
-    /* border: 1px solid black; */
-
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: inherit;
-}
-
 .list__item input[type="submit"] {
     border: 4px solid black;
     margin-left: 12px;
@@ -63,11 +55,34 @@
     transition: .5s;
 }
 
+input[name="createEntrySubmit"] {
+    position: relative;
+    display: block;
+}
+
+input[name="createLoadingSubmit"] {
+    position: absolute;
+    top: 0%;
+    left: 26%;
+}
+
+input[name="createUnloadingSubmit"] {
+    position: absolute;
+    top: 0%;
+    right: 26%;
+}
+
+input[name="createExitSubmit"] {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
 .list__field {
     /* border: 1px solid black; */
     padding: 12px;
     text-align: left;
-    border-right: 2px solid black;
+    border-left: 2px solid black;
     font-weight: 600;
     font-size: 20px;
 
@@ -79,6 +94,7 @@
 
 #user__identifier.list__field  {
     width: 14%;
+    border-left: transparent;
 }
 
 #user__full-name.list__field  {
@@ -99,6 +115,7 @@
 
 #occupation__identifier.list__field {
     width: 8%;
+    border-left: transparent;
 }
 
 #occupation__title.list__field {
@@ -106,11 +123,12 @@
 }
 
 #occupation__description.list__field {
-    border-right: transparent;
+    width: auto;
 }
 
 #product__identifier.list__field {
     width: 12%;
+    border-left: transparent;
 }
 
 #product__title.list__field {
@@ -122,23 +140,20 @@
 }
 
 #product__quantity.list__field {
-    border-right: transparent;
+    width: auto;
 }
 
 #truck__identifier.list__field {
-    width: 12%;
+    width: 16%;
+    border-left: transparent;
 }
 
 #truck__model.list__field {
-    width: 32%;
+    width: 44%;
 }
 
 #truck__host.list__field {
-    width: 26%;
-}
-
-#truck__status.list__field {
-    width: 10%;
+    width: 20%;
 }
 
 #truck__picture {
@@ -148,6 +163,7 @@
 #request__identifier.list__field {
     width: 16%;
     border-bottom: 2px solid black;
+    border-left: transparent;
 }
 
 #request__truck-model.list__field {
@@ -158,19 +174,19 @@
 #request__topic.list__field {
     width: 14%;
     border-bottom: 2px solid black;
-    border-right: transparent;
 }
 
 #request__sent-date.list__field {
-    width: 12%;
+    width: 16%;
+    border-left: transparent;
 }
 
 #request__resolver.list__field {
-    width: 52%;
+    width: 54%;
 }
 
 #request__status.list__field {
-    border-right: transparent;
+    width: auto;
 }
 
 #request__picture {

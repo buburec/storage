@@ -11,8 +11,8 @@ public class OccupationData {
         this.description = description;
     }
 
-    public int getIdentifier() {
-        return identifier;
+    public String getIdentifier() {
+        return String.format("%04d", identifier);
     }
 
     public void setIdentifier(int identifier) {

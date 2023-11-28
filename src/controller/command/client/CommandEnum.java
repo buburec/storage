@@ -3,6 +3,10 @@ package controller.command.client;
 import controller.command.*;
 import controller.command.administrator.*;
 import controller.command.driver.*;
+import controller.command.moderator.BlockUserCommand;
+import controller.command.moderator.CreateProductCommand;
+import controller.command.moderator.ProductListCommand;
+import controller.command.storekeeper.*;
 
 public enum CommandEnum {
     LOGIN {
@@ -65,19 +69,99 @@ public enum CommandEnum {
             this.command = new DriverProductListCommand();
         }
     },
-    ENTRY_REQUEST {
+    CHOOSE_REQUEST {
         {
-            this.command = new EntryRequestCommand();
+            this.command = new ChooseRequestCommand();
         }
     },
-    CREATE_DRIVER_REQUEST {
+    PRODUCT_LIST {
         {
-            this.command = new CreateDriverRequestCommand();
+            this.command = new ProductListCommand();
         }
     },
-    EXIT_REQUEST {
+    CREATE_PRODUCT {
         {
-            this.command = new ExitRequestCommand();
+            this.command = new CreateProductCommand();
+        }
+    },
+    CREATE_REQUEST {
+        {
+            this.command = new CreateRequestCommand();
+        }
+    },
+    FILL_REQUEST {
+        {
+            this.command = new FillRequestCommand();
+        }
+    },
+    ADD_WAYBILL_PRODUCT {
+        {
+            this.command = new AddWaybillProductCommand();
+        }
+    },
+    DELETE_WAYBILL_PRODUCT {
+        {
+            this.command = new DeleteWaybillProductCommand();
+        }
+    },
+    CREATE_TRUCK {
+        {
+            this.command = new CreateTruckCommand();
+        }
+    },
+    DRIVER_PROFILE {
+        {
+            this.command = new DriverProfileCommand();
+        }
+    },
+    UPDATE_DRIVER_PROFILE {
+        {
+            this.command = new UpdateDriverProfileCommand();
+        }
+    },
+    STOREKEEPER_REQUESTS {
+        {
+            this.command = new StorekeeperRequestsCommand();
+        }
+    },
+    DRIVER_REQUEST {
+        {
+            this.command = new DriverRequestCommand();
+        }
+    },
+    DELETE_REQUEST {
+        {
+            this.command = new DeleteRequestCommand();
+        }
+    },
+    STOREKEEPER_TRUCK_LIST {
+        {
+            this.command = new StorekeeperTruckListCommand();
+        }
+    },
+    BLOCK_USER {
+        {
+            this.command = new BlockUserCommand();
+        }
+    },
+    ACCEPT_REQUEST {
+        {
+           this.command = new AcceptRequestCommand();
+        }
+    },
+    DECLINE_REQUEST {
+        {
+            this.command = new DeclineRequestCommand();
+        }
+    },
+    REQUEST_RESPONSE {
+        {
+            this.command = new RequestResponseCommand();
+        }
+    },
+    STOREKEEPER_REQUEST {
+        {
+            this.command = new StorekeeperRequestCommand();
         }
     };
 

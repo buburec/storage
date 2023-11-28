@@ -53,7 +53,8 @@ public class OracleEmployeeDAO implements EmployeeDAO {
                     String password = resultSet.getString(2);
                     String fullName = resultSet.getString(3);
                     String title = resultSet.getString(4);
-                    profileDataList.add(new ProfileData(identifier, password, fullName, title));
+                    String status = resultSet.getString(5);
+                    profileDataList.add(new ProfileData(identifier, password, fullName, title, status));
                 }
                 return profileDataList;
             } catch (SQLException e) {

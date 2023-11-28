@@ -68,17 +68,17 @@ public class OracleDBDAOFactory extends DAOFactory {
     }
 
     @Override
-    public TruckMovementDAO getTruckMovementDAO() {
-        return new OracleTruckMovementDAO(connection);
-    }
-
-    @Override
     public TruckDAO getTruckDAO() {
-        return null;
+        return new OracleTruckDAO(connection);
     }
 
     @Override
     public ProductDAO getProductDAO() {
         return new OracleProductDAO(connection);
+    }
+
+    @Override
+    public TruckWaybillDAO getTruckWaybillDAO() {
+        return new OracleTruckWaybillDAO(connection);
     }
 }

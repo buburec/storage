@@ -42,6 +42,7 @@ public class LoginCommand implements ActionCommand {
                 } else {
                     httpSession.setAttribute("identifier", login);
                     LoginLogic.setStatus("online", login);
+                    DAOLogic.setModeratorDAO(httpSession, factory);
                     page = ConfigurationManager.getProperty("path.page.moderator.welcome");
                 }
                 break;
@@ -61,6 +62,7 @@ public class LoginCommand implements ActionCommand {
                 } else {
                     httpSession.setAttribute("identifier", login);
                     LoginLogic.setStatus("online", login);
+                    DAOLogic.setStorekeeperDAO(httpSession, factory);
                     page = ConfigurationManager.getProperty("path.page.storekeeper.welcome");
                 }
                 break;

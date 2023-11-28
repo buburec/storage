@@ -21,8 +21,7 @@
             </li>
             <li class="heading__item">
                 <form name="moderatorProductsForm" method="POST" action="/storage/product-list">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.moderator.product_list" />
+                    <input type="hidden" name="command" value="product_list" />
                     <input type="submit" name="productsSubmit" value="Products">
                 </form>
             </li>

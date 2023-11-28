@@ -108,12 +108,39 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>product-create</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>product-create</servlet-name>
+        <url-pattern>/product-list/create-product</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>request-list</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>request-list</servlet-name>
         <url-pattern>/request-list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>choose-request</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>choose-request</servlet-name>
+        <url-pattern>/request-list/choose-request</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>fill-request</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fill-request</servlet-name>
+        <url-pattern>/request-list/fill-request</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -126,6 +153,24 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>create-waybill</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create-waybill</servlet-name>
+        <url-pattern>/request-list/create-waybill</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>waybill</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>waybill</servlet-name>
+        <url-pattern>/request-list/waybill</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>request</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
     </servlet>
@@ -135,12 +180,30 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>request-response</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>request-response</servlet-name>
+        <url-pattern>/request-list/request-response</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>truck-list</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>truck-list</servlet-name>
         <url-pattern>/truck-list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>create-truck</servlet-name>
+        <servlet-class>controller.FrontController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create-truck</servlet-name>
+        <url-pattern>/profile/create-truck</url-pattern>
     </servlet-mapping>
 
     <error-page>

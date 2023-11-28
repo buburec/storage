@@ -86,11 +86,6 @@
                         <li class="info__item">
                             <input type="hidden" name="command" value="create_user" />
                             <input type="submit" name="createSubmit" value="Create">
-                            <form name="adminCreateCancel" method="POST" action="/storage/user-list">
-                                <input type="hidden" name="command" value="users" />
-                                <input type="hidden" name="page" value="path.page.admin.user_list" />
-                                <input type="submit" name="cancelSubmit" value="Cancel">
-                            </form>
                         </li>
                     </ul>
                 </form>

@@ -11,11 +11,26 @@ public class DAOLogic {
         httpSession.setAttribute("OccupationDAO", factory.getOccupationDAO());
     }
 
+    public static void setModeratorDAO(HttpSession httpSession, DAOFactory factory) {
+        httpSession.setAttribute("EmployeeDAO", factory.getEmployeeDAO());
+        httpSession.setAttribute("OccupationDAO", factory.getOccupationDAO());
+        httpSession.setAttribute("ProductDAO", factory.getProductDAO());
+    }
+
     public static void setDriverDAO(HttpSession httpSession, DAOFactory factory) {
+        httpSession.setAttribute("EmployeeDAO", factory.getEmployeeDAO());
         httpSession.setAttribute("TruckRequestDAO", factory.getTruckRequestDAO());
         httpSession.setAttribute("StorageProductDAO", factory.getStorageProductDAO());
-        httpSession.setAttribute("TruckMovementDAO", factory.getTruckMovementDAO());
-//        httpSession.setAttribute("TruckDAO", factory.getTruckDAO());
+        httpSession.setAttribute("TruckDAO", factory.getTruckDAO());
         httpSession.setAttribute("ProductDAO", factory.getProductDAO());
+        httpSession.setAttribute("TruckWaybillDAO", factory.getTruckWaybillDAO());
+    }
+
+    public static void setStorekeeperDAO(HttpSession httpSession, DAOFactory factory) {
+        httpSession.setAttribute("EmployeeDAO", factory.getEmployeeDAO());
+        httpSession.setAttribute("TruckRequestDAO", factory.getTruckRequestDAO());
+        httpSession.setAttribute("StorageProductDAO", factory.getStorageProductDAO());
+        httpSession.setAttribute("TruckDAO", factory.getTruckDAO());
+        httpSession.setAttribute("TruckWaybillDAO", factory.getTruckWaybillDAO());
     }
 }

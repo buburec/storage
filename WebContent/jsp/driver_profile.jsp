@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +17,13 @@
         <ul class="heading__list">
             <li class="heading__item">
                 <form name="driverProductsForm" method="POST" action="/storage/product-list">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.driver.product_list" />
+                    <input type="hidden" name="command" value="driver_product_list" />
                     <input type="submit" name="productsSubmit" value="Products">
                 </form>
             </li>
             <li class="heading__item">
                 <form name="driverRequestsForm" method="POST" action="/storage/request-list">
-                    <input type="hidden" name="command" value="requests" />
-                    <input type="hidden" name="page" value="path.page.driver.request_list" />
+                    <input type="hidden" name="command" value="driver_requests" />
                     <input type="submit" name="requestsSubmit" value="Requests">
                 </form>
             </li>
@@ -39,8 +38,7 @@
             </li>
             <li class="heading__item">
                 <form name="driverProfileForm" method="POST" action="/storage/profile">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.driver.profile" />
+                    <input type="hidden" name="command" value="driver_profile" />
                     <input type="submit" name="profileSubmit" value="Profile">
                 </form>
             </li>
@@ -57,41 +55,33 @@
         <div class="content__wrapper">
             <h1>Profile</h1>
             <div class="info__wrapper">
-                <ul class="info__list">
-                    <li class="info__item">
-                        <div class="info__blocked-field">
-                            <form>
-                                <input type="text" value="bob_driver99" required>
-                            </form>
-                            <label>Login</label>
-                        </div>
-                        <div class="info__field">
-                            <form>
-                                <input type="text" value="1" required>
-                            </form>
-                            <label>Password</label>
-                        </div>
-                    </li>
-                    <li class="info__item">
-                        <div class="info__blocked-field">
-                            <form>
-                                <input type="text" value="Driver" required>
-                            </form>
-                            <label>Occupation</label>
-                        </div>
-                        <div class="info__field">
-                            <form>
-                                <input type="text" value="Bob Brown" required>
-                            </form>
-                            <label>Full name</label>
-                        </div>
-                    </li>
-                    <li class="info__item">
-                        <form>
+                <form name="driverUpdateProfileForm" method="POST" action="/storage/profile">
+                    <ul class="info__list">
+                        <li class="info__item">
+                            <div class="info__blocked-field">
+                                <input type="text" name="identifier" value="${profile.get(0).getIdentifier()}" required>
+                                <label>Login</label>
+                            </div>
+                            <div class="info__field">
+                                <input type="text" name="password" value="${profile.get(0).getPassword()}" required>
+                                <label>Password</label>
+                            </div>
+                        </li>
+                        <li class="info__item">
+                            <div class="info__blocked-field">
+                                <input type="text" value="${profile.get(0).getTitle()}" required>
+                                <label>Occupation</label>
+                            </div>
+                            <div class="info__field">
+                                <input type="text" name="fullName" value="${profile.get(0).getFullName()}" required>                                    <label>Full name</label>
+                            </div>
+                        </li>
+                        <li class="info__item">
+                            <input type="hidden" name="command" value="update_driver_profile" />
                             <input type="submit" name="saveSubmit" value="Save changes">
-                        </form>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </form>
             </div>
         </div>
 
@@ -99,22 +89,37 @@
             <h1>Truck list</h1>
             <div class="list__wrapper">
                 <ul>
-                    <li class="list__item">
-                        <div class="list__field" id="truck__identifier">
-                            О753ХС95
-                        </div>
-                        <div class="list__field" id="truck__model">
-                            Heavy-Duty Transporter XZ-2000
-                        </div>
-                        <div class="list__field" id="truck__status">
-                            inside
-                        </div>
-                        <form name="driverTruckForm" method="POST" action="/storage/truck">
-                            <input type="hidden" name="command" value="forward" />
-                            <input type="hidden" name="page" value="path.page.driver.truck" />
-                            <input type="submit" value="" id="truck__picture">
-                        </form>
-                    </li>
+                    <form name="driverCreateTruckForm" method="POST" action="/storage/profile/create-truck">
+                        <input type="hidden" name="command" value="forward" />
+                        <input type="hidden" name="page" value="path.page.driver.truck_create" />
+                        <input type="submit" name="createSubmit" value="Create truck" class="content__submit">
+                    </form>
+                    <c:forEach items="${insideTruckList}" var="truck">
+                        <li class="list__item">
+                            <div class="list__field" id="truck__identifier">
+                                <p>${truck.getTruckIdentifier()}</p>
+                            </div>
+                            <div class="list__field" id="truck__model">
+                                <p>${truck.getModel()}</p>
+                            </div>
+                            <div class="list__field" id="truck__status">
+                                inside
+                            </div>
+                        </li>
+                    </c:forEach>
+                    <c:forEach items="${outsideTruckList}" var="truck">
+                        <li class="list__item">
+                            <div class="list__field" id="truck__identifier">
+                                <p>${truck.getTruckIdentifier()}</p>
+                            </div>
+                            <div class="list__field" id="truck__model">
+                                <p>${truck.getModel()}</p>
+                            </div>
+                            <div class="list__field" id="truck__status">
+                                outside
+                            </div>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
         </div>

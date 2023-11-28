@@ -16,15 +16,13 @@
         <ul class="heading__list">
             <li class="heading__item">
                 <form name="driverProductsForm" method="POST" action="/storage/product-list">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.driver.product_list" />
+                    <input type="hidden" name="command" value="driver_product_list" />
                     <input type="submit" name="productsSubmit" value="Products">
                 </form>
             </li>
             <li class="heading__item">
                 <form name="driverRequestsForm" method="POST" action="/storage/request-list">
-                    <input type="hidden" name="command" value="requests" />
-                    <input type="hidden" name="page" value="path.page.driver.request_list" />
+                    <input type="hidden" name="command" value="driver_requests" />
                     <input type="submit" name="requestsSubmit" value="Requests">
                 </form>
             </li>
@@ -39,8 +37,7 @@
             </li>
             <li class="heading__item">
                 <form name="driverProfileForm" method="POST" action="/storage/profile">
-                    <input type="hidden" name="command" value="forward" />
-                    <input type="hidden" name="page" value="path.page.driver.profile" />
+                    <input type="hidden" name="command" value="driver_profile" />
                     <input type="submit" name="profileSubmit" value="Profile">
                 </form>
             </li>
@@ -51,7 +48,7 @@
                 </form>
             </li>
         </ul>
-</header>
+    </header>
 
     <div class="body__wrapper">
         <div class="content__wrapper">

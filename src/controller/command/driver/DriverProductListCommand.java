@@ -3,7 +3,7 @@ package controller.command.driver;
 import controller.command.ActionCommand;
 import controller.resource.ConfigurationManager;
 import datalayer.daointerface.StorageProductDAO;
-import datalayer.daointerface.TruckMovementDAO;
+import datalayer.daointerface.TruckRequestDAO;
 import datalayer.data.StorageProduct;
 import datalayer.data.StorageTruckProduct;
 
@@ -20,8 +20,8 @@ public class DriverProductListCommand implements ActionCommand {
         List<StorageProduct> storageProductList = storageProductDAO.getDriverStorageProductList();
         request.setAttribute("storageProductList", storageProductList);
         String identifier = (String) httpSession.getAttribute("identifier");
-        TruckMovementDAO truckMovementDAO = (TruckMovementDAO) httpSession.getAttribute("TruckMovementDAO");
-        List<StorageTruckProduct> storageTruckProductList = truckMovementDAO.getStorageTruckProductList(identifier);
+        TruckRequestDAO truckRequestDAO = (TruckRequestDAO) httpSession.getAttribute("TruckRequestDAO");
+        List<StorageTruckProduct> storageTruckProductList = truckRequestDAO.getStorageTruckProductList(identifier);
         request.setAttribute("storageTruckProductList", storageTruckProductList);
         page = ConfigurationManager.getProperty("path.page.driver.product_list");
         return page;

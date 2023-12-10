@@ -9,6 +9,10 @@ public interface TruckDAO {
 
     List<Truck> getOutsideTruckIdentifierList(String hostIdentifier);
 
+    List<Truck> getLoadedTruckIdentifierList(String hostIdentifier);
+
+    List<Truck> getUnloadedTruckIdentifierList(String hostIdentifier);
+
     List<Truck> getInsideTruckList();
 
     List<Truck> getInsideTruckList(String hostIdentifier);

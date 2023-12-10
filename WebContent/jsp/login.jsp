@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,9 @@
     <link rel="stylesheet" href="../css/login.css" type="text/css">
 </head>
 <body>
+    <div class="wrong__wrapper">
+        <p>${wrongLogin}</p>
+    </div>
     <div class="login__wrapper">
         <h1>StorageKP</h1>
         <div class="login__content">

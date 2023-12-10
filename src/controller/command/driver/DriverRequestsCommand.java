@@ -17,8 +17,10 @@ public class DriverRequestsCommand implements ActionCommand {
         String identifier = (String) httpSession.getAttribute("identifier");
         TruckRequestDAO truckRequestDAO = (TruckRequestDAO) httpSession.getAttribute("TruckRequestDAO");
         truckRequestDAO.deleteTruckRequest();
-        List<Request> requestList = truckRequestDAO.getDriverRequestList(identifier);
-        request.setAttribute("requestList", requestList);
+        List<Request> activeRequestList = truckRequestDAO.getDriverActiveRequestList(identifier);
+        request.setAttribute("activeRequestList", activeRequestList);
+        List<Request> resolvedRequestList = truckRequestDAO.getDriverResolvedRequestList(identifier);
+        request.setAttribute("resolvedRequestList", resolvedRequestList);
         page = ConfigurationManager.getProperty("path.page.driver.request_list");
         return page;
     }

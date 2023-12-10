@@ -52,11 +52,49 @@
     </header>
 
     <div class="body__wrapper">
-        <div class="content__wrapper">
-            <h1>Request list</h1>
+        <div class="content__switch-form">
+            <input type="submit" id="toggleButton" value="Resolved request list..." class="content__switch-submit">
+        </div>
+        <div id="activeRequestsContent" class="content__wrapper">
+            <h1>Active request list</h1>
             <div class="list__wrapper">
                 <ul>
-                    <c:forEach items="${requestList}" var="request">
+                    <c:forEach items="${activeRequestList}" var="request">
+                        <li class="list__item">
+                            <div class="list__field" id="request__identifier">
+                                <p>${request.getIdentifier()}</p>
+                            </div>
+                            <div class="list__field" id="request__truck-model">
+                                <p>${request.getTruckModel()}</p>
+                            </div>
+                            <div class="list__field" id="request__topic">
+                                <p>${request.getTopic()}</p>
+                            </div>
+                            <form name="storekeeperRequestForm" method="POST" action="/storage/request-list/request">
+                                <input type="hidden" name="command" value="storekeeper_request" />
+                                <input type="hidden" name="requestIdentifier" value="${request.getIdentifier()}" />
+                                <input type="submit" value="" id="request__picture">
+                            </form>
+                            <div class="list__field" id="request__sent-date">
+                                <p>${request.getSentDate()}</p>
+                            </div>
+                            <div class="list__field" id="request__resolver">
+                                <p>${request.getResolver()}</p>
+                            </div>
+                            <div class="list__field" id="request__status">
+                                <p>${request.getStatus()}</p>
+                            </div>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
+
+        <div id="resolvedRequestsContent" class="content__wrapper">
+            <h1>Resolved request list</h1>
+            <div class="list__wrapper">
+                <ul>
+                    <c:forEach items="${resolvedRequestList}" var="request">
                         <li class="list__item">
                             <div class="list__field" id="request__identifier">
                                 <p>${request.getIdentifier()}</p>
@@ -87,5 +125,33 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to the content wrappers
+            var activeRequestsContent = document.getElementById("activeRequestsContent");
+            var resolvedRequestsContent = document.getElementById("resolvedRequestsContent");
+
+            // Get reference to the button
+            var toggleButton = document.getElementById("toggleButton");
+
+            // Initial state (show storage content, hide truck content)
+            activeRequestsContent.style.display = "flex";
+            resolvedRequestsContent.style.display = "none";
+
+            // Add click event listener to the button
+            toggleButton.addEventListener("click", function () {
+                // Toggle visibility of content wrappers
+                if (activeRequestsContent.style.display === "flex") {
+                    activeRequestsContent.style.display = "none";
+                    resolvedRequestsContent.style.display = "flex";
+                    toggleButton.value = "Active request list...";
+                } else {
+                    activeRequestsContent.style.display = "flex";
+                    resolvedRequestsContent.style.display = "none";
+                    toggleButton.value = "Resolved request list...";
+                }
+            });
+        });
+    </script>
 </body>
 </html>

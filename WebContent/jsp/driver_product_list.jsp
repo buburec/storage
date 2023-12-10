@@ -51,7 +51,13 @@
     </header>
 
     <div class="body__wrapper">
-        <div class="content__wrapper">
+        <!--<div class="content__wrapper">
+        <input type="submit" id="toggleButton" value="Truck product list" class="content__submit">
+        </div>-->
+        <div class="content__switch-form">
+            <input type="submit" id="toggleButton" value="Truck product list..." class="content__switch-submit">
+        </div>
+        <div id="storageContent" class="content__wrapper">
             <h1>Storage product list</h1>
             <div class="list__wrapper">
                 <ul>
@@ -74,7 +80,7 @@
                 </ul>
             </div>
         </div>
-        <div class="content__wrapper">
+        <div id="truckContent" class="content__wrapper">
             <h1>Truck product list</h1>
             <div class="list__wrapper">
                 <ul>
@@ -98,5 +104,33 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to the content wrappers
+            var storageContent = document.getElementById("storageContent");
+            var truckContent = document.getElementById("truckContent");
+
+            // Get reference to the button
+            var toggleButton = document.getElementById("toggleButton");
+
+            // Initial state (show storage content, hide truck content)
+            storageContent.style.display = "flex";
+            truckContent.style.display = "none";
+
+            // Add click event listener to the button
+            toggleButton.addEventListener("click", function () {
+                // Toggle visibility of content wrappers
+                if (storageContent.style.display === "flex") {
+                    storageContent.style.display = "none";
+                    truckContent.style.display = "flex";
+                    toggleButton.value = "Storage product list...";
+                } else {
+                    storageContent.style.display = "flex";
+                    truckContent.style.display = "none";
+                    toggleButton.value = "Truck product list...";
+                }
+            });
+        });
+    </script>
 </body>
 </html>

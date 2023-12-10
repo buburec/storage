@@ -9,15 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public class DeleteRequestCommand implements ActionCommand {
+public class DriverReturnWaybillCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;
         HttpSession httpSession = request.getSession();
-        int requestIdentifier = Integer.parseInt(request.getParameter("requestIdentifier"));
         String identifier = (String) httpSession.getAttribute("identifier");
+        String truckIdentifier = (String) httpSession.getAttribute("truckIdentifier");
         TruckRequestDAO truckRequestDAO = (TruckRequestDAO) httpSession.getAttribute("TruckRequestDAO");
-        truckRequestDAO.deleteTruckRequest(requestIdentifier);
+        truckRequestDAO.updateReturnWaybill(truckIdentifier);
+        httpSession.removeAttribute("actionType");
+        httpSession.removeAttribute("truckIdentifier");
+        httpSession.removeAttribute("commentary");
         truckRequestDAO.deleteTruckRequest();
         List<Request> activeRequestList = truckRequestDAO.getDriverActiveRequestList(identifier);
         request.setAttribute("activeRequestList", activeRequestList);
@@ -26,5 +29,4 @@ public class DeleteRequestCommand implements ActionCommand {
         page = ConfigurationManager.getProperty("path.page.driver.request_list");
         return page;
     }
-
 }

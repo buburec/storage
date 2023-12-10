@@ -61,7 +61,7 @@
        <div class="content__wrapper">
            <h1>Profile</h1>
            <div class="info__wrapper">
-                <form name="adminUpdateProfileForm" method="POST" action="/storage/profile">
+                <form name="adminUpdateProfileForm" method="POST" action="/storage/user-list/edit-user">
                    <ul class="info__list">
                        <li class="info__item">
                            <div class="info__blocked-field">

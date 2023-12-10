@@ -19,8 +19,10 @@ public class RequestResponseCommand implements ActionCommand {
         TruckRequestDAO truckRequestDAO = (TruckRequestDAO) httpSession.getAttribute("TruckRequestDAO");
         truckRequestDAO.updateResolverResponse(requestIdentifier, resolverResponse);
         String identifier = (String) httpSession.getAttribute("identifier");
-        List<Request> requestList = truckRequestDAO.getStorekeeperRequestList(identifier);
-        request.setAttribute("requestList", requestList);
+        List<Request> resolvedRequestList = truckRequestDAO.getStorekeeperResolvedRequestList(identifier);
+        request.setAttribute("resolvedRequestList", resolvedRequestList);
+        List<Request> activeRequestList = truckRequestDAO.getStorekeeperActiveRequestList();
+        request.setAttribute("activeRequestList", activeRequestList);
         page = ConfigurationManager.getProperty("path.page.storekeeper.request_list");
         return page;
     }

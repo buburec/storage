@@ -13,9 +13,9 @@ public interface TruckWaybillDAO {
 
     int updateWaybillProduct(String title, int quantity);
 
-    void updateTruckWaybill(String truckIdentifier);
+    void updateCurrentWaybill(String truckIdentifier);
 
-    void updateEntryWaybill(int identifier);
+    void updateLastAcceptedWaybill(int identifier);
 
     void deleteWaybillProduct(int productIdentifier);
 

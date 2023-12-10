@@ -20,7 +20,8 @@ public class DeleteWaybillProductCommand implements ActionCommand {
         int productIdentifier = Integer.parseInt(request.getParameter("productIdentifier"));
         truckWaybillDAO.deleteWaybillProduct(productIdentifier);
         String actionType = (String) httpSession.getAttribute("actionType");
-        List<Product> productList = TruckRequestLogicEnum.getAvailableProductList(httpSession, actionType);
+        TruckRequestLogicEnum requestLogicEnum = TruckRequestLogicEnum.valueOf(actionType.toUpperCase());
+        List<Product> productList = requestLogicEnum.getAvailableProductList(httpSession);
         request.setAttribute("productList", productList);
         List<Waybill> waybillList = truckWaybillDAO.getTruckWaybill();
         request.setAttribute("waybillList", waybillList);

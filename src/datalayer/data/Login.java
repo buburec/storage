@@ -1,13 +1,12 @@
 package datalayer.data;
 
-public class LoginData {
+public class Login {
     private String identifier;
     private String password;
     private String occupation;
-
     private String status;
 
-    public LoginData(String identifier, String password, String occupation, String status) {
+    public Login(String identifier, String password, String occupation, String status) {
         this.identifier = identifier;
         this.password = password;
         this.occupation = occupation;

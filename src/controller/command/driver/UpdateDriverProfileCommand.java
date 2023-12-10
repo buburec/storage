@@ -4,7 +4,7 @@ import controller.command.ActionCommand;
 import controller.resource.ConfigurationManager;
 import datalayer.daointerface.EmployeeDAO;
 import datalayer.daointerface.TruckDAO;
-import datalayer.data.ProfileData;
+import datalayer.data.Profile;
 import datalayer.data.Truck;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +21,7 @@ public class UpdateDriverProfileCommand implements ActionCommand {
         HttpSession httpSession = request.getSession();
         EmployeeDAO employeeDAO = (EmployeeDAO) httpSession.getAttribute("EmployeeDAO");
         employeeDAO.updateProfile(password, fullName, identifier);
-        List<ProfileData> profile = employeeDAO.getProfile(identifier);
+        List<Profile> profile = employeeDAO.getProfile(identifier);
         request.setAttribute("profile", profile);
         TruckDAO truckDAO = (TruckDAO) httpSession.getAttribute("TruckDAO");
         List<Truck> insideTruckList = truckDAO.getInsideTruckList(identifier);

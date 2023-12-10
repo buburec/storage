@@ -1,7 +1,7 @@
 package controller.command.administrator;
 
 import controller.command.ActionCommand;
-import controller.logic.CreateUserLogic;
+import controller.logic.CreateUserEnumLogic;
 import controller.resource.ConfigurationManager;
 import datalayer.daointerface.EmployeeDAO;
 import datalayer.data.User;
@@ -17,9 +17,10 @@ public class CreateUserCommand implements ActionCommand {
         String identifier = request.getParameter("identifier");
         String password = request.getParameter("password");
         String fullName = request.getParameter("fullName");
-        int occupationIdentifier = CreateUserLogic.getOccupationIdentifier(request.getParameter("title"));
+        CreateUserEnumLogic userEnumLogic = CreateUserEnumLogic.valueOf(request.getParameter("title").toUpperCase());
+        int occupationIdentifier = userEnumLogic.getOccupationIdentifier();
 
-        HttpSession httpSession = request.getSession();
+        HttpSession httpSession = request.getSession(false);
         EmployeeDAO employeeDAO = (EmployeeDAO) httpSession.getAttribute("EmployeeDAO");
 
         employeeDAO.createUser(identifier, password, fullName, occupationIdentifier);

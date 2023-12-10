@@ -1,10 +1,16 @@
 package controller.logic;
 
 import datalayer.DAOFactory;
+import datalayer.DBType;
 
 import javax.servlet.http.HttpSession;
 
 public class DAOLogic {
+    private static final DAOFactory factory = DAOFactory.getInstance(DBType.ORACLE);
+
+    public static DAOFactory getFactory() {
+        return DAOLogic.factory;
+    }
 
     public static void setAdministratorDAO(HttpSession httpSession, DAOFactory factory) {
         httpSession.setAttribute("EmployeeDAO", factory.getEmployeeDAO());

@@ -20,7 +20,6 @@ public class OracleTruckDAO implements TruckDAO {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.driver.inside_truck_list");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, hostIdentifier);
-            preparedStatement.setString(2, hostIdentifier);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 List<Truck> truckIdentifierList = new ArrayList<>();
                 while (resultSet.next()) {
@@ -42,7 +41,48 @@ public class OracleTruckDAO implements TruckDAO {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.driver.outside_truck_list");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, hostIdentifier);
-            preparedStatement.setString(2, hostIdentifier);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                List<Truck> truckIdentifierList = new ArrayList<>();
+                while (resultSet.next()) {
+                    String truckIdentifier = resultSet.getString(1);
+                    truckIdentifierList.add(new Truck(truckIdentifier));
+                }
+                return truckIdentifierList;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Truck> getLoadedTruckIdentifierList(String hostIdentifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.driver.loaded_truck_list");
+        try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
+            preparedStatement.setString(1, hostIdentifier);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                List<Truck> truckIdentifierList = new ArrayList<>();
+                while (resultSet.next()) {
+                    String truckIdentifier = resultSet.getString(1);
+                    truckIdentifierList.add(new Truck(truckIdentifier));
+                }
+                return truckIdentifierList;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Truck> getUnloadedTruckIdentifierList(String hostIdentifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.driver.unloaded_truck_list");
+        try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
+            preparedStatement.setString(1, hostIdentifier);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 List<Truck> truckIdentifierList = new ArrayList<>();
                 while (resultSet.next()) {
@@ -86,7 +126,6 @@ public class OracleTruckDAO implements TruckDAO {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.driver.inside_truck_list");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, hostIdentifier);
-            preparedStatement.setString(2, hostIdentifier);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 List<Truck> truckList = new ArrayList<>();
                 while (resultSet.next()) {
@@ -109,7 +148,6 @@ public class OracleTruckDAO implements TruckDAO {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.driver.outside_truck_list");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, hostIdentifier);
-            preparedStatement.setString(2, hostIdentifier);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 List<Truck> truckList = new ArrayList<>();
                 while (resultSet.next()) {

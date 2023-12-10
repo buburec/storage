@@ -1,13 +1,13 @@
 package datalayer.data;
 
-public class ProfileData {
+public class Profile {
     private String identifier;
     private String password;
     private String fullName;
     private String title;
     private String status;
 
-    public ProfileData(String identifier, String password, String fullName, String title, String status) {
+    public Profile(String identifier, String password, String fullName, String title, String status) {
         this.identifier = identifier;
         this.password = password;
         this.fullName = fullName;

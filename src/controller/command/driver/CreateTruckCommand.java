@@ -4,7 +4,7 @@ import controller.command.ActionCommand;
 import controller.resource.ConfigurationManager;
 import datalayer.daointerface.EmployeeDAO;
 import datalayer.daointerface.TruckDAO;
-import datalayer.data.ProfileData;
+import datalayer.data.Profile;
 import datalayer.data.Truck;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ public class CreateTruckCommand implements ActionCommand {
         TruckDAO truckDAO = (TruckDAO) httpSession.getAttribute("TruckDAO");
         truckDAO.createTruck(identifier, model, hostIdentifier);
         EmployeeDAO employeeDAO = (EmployeeDAO) httpSession.getAttribute("EmployeeDAO");
-        List<ProfileData> profile = employeeDAO.getProfile(hostIdentifier);
+        List<Profile> profile = employeeDAO.getProfile(hostIdentifier);
         request.setAttribute("profile", profile);
         List<Truck> insideTruckList = truckDAO.getInsideTruckList(identifier);
         List<Truck> outsideTruckList = truckDAO.getOutsideTruckList(identifier);

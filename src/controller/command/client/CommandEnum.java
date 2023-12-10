@@ -163,6 +163,11 @@ public enum CommandEnum {
         {
             this.command = new StorekeeperRequestCommand();
         }
+    },
+    DRIVER_RETURN_WAYBILL {
+        {
+            this.command = new DriverReturnWaybillCommand();
+        }
     };
 
     ActionCommand command;

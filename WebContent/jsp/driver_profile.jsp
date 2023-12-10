@@ -52,7 +52,10 @@
     </header>
 
     <div class="body__wrapper">
-        <div class="content__wrapper">
+        <div class="content__switch-form">
+            <input type="submit" id="toggleButton" value="Truck list..." class="content__switch-submit">
+        </div>
+        <div id="profileContent" class="content__wrapper">
             <h1>Profile</h1>
             <div class="info__wrapper">
                 <form name="driverUpdateProfileForm" method="POST" action="/storage/profile">
@@ -85,7 +88,7 @@
             </div>
         </div>
 
-        <div class="content__wrapper">
+        <div id="truckListContent" class="content__wrapper">
             <h1>Truck list</h1>
             <div class="list__wrapper">
                 <ul>
@@ -118,11 +121,46 @@
                             <div class="list__field" id="truck__status">
                                 outside
                             </div>
+                            <form name="driverCreateTruckForm" method="POST" action="/storage/profile">
+                                <input type="hidden" name="command" value="forward" />
+                                <input type="hidden" name="truckIdentifier" value="${truck.getTruckIdentifier()}" />
+                                <div class="info__product__field" id="product__delete">
+                                    <input type="submit" value="" class="product__delete-submit">
+                                </div>
+                            </form>
                         </li>
                     </c:forEach>
                 </ul>
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to the content wrappers
+            var storageContent = document.getElementById("profileContent");
+            var truckContent = document.getElementById("truckListContent");
+
+            // Get reference to the button
+            var toggleButton = document.getElementById("toggleButton");
+
+            // Initial state (show storage content, hide truck content)
+            storageContent.style.display = "flex";
+            truckContent.style.display = "none";
+
+            // Add click event listener to the button
+            toggleButton.addEventListener("click", function () {
+                // Toggle visibility of content wrappers
+                if (storageContent.style.display === "flex") {
+                    storageContent.style.display = "none";
+                    truckContent.style.display = "flex";
+                    toggleButton.value = "Profile...";
+                } else {
+                    storageContent.style.display = "flex";
+                    truckContent.style.display = "none";
+                    toggleButton.value = "Truck list...";
+                }
+            });
+        });
+    </script>
 </body>
 </html>

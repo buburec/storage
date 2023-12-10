@@ -2,7 +2,7 @@ package controller.command;
 
 import controller.resource.ConfigurationManager;
 import datalayer.daointerface.EmployeeDAO;
-import datalayer.data.ProfileData;
+import datalayer.data.Profile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,7 +15,7 @@ public class ProfileCommand implements ActionCommand {
         HttpSession httpSession = request.getSession();
         String identifier = (String) httpSession.getAttribute("identifier");
         EmployeeDAO employeeDAO = (EmployeeDAO) httpSession.getAttribute("EmployeeDAO");
-        List<ProfileData> profile = employeeDAO.getProfile(identifier);
+        List<Profile> profile = employeeDAO.getProfile(identifier);
         request.setAttribute("profile", profile);
         page = ConfigurationManager.getProperty(request.getParameter("page"));
         return page;

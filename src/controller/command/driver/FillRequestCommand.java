@@ -21,10 +21,11 @@ public class FillRequestCommand implements ActionCommand {
         String actionType = (String) httpSession.getAttribute("actionType");
         httpSession.setAttribute("truckIdentifier", truckIdentifier);
         httpSession.setAttribute("commentary", commentary);
-        List<Product> productList = TruckRequestLogicEnum.getAvailableProductList(httpSession, actionType);
+        TruckRequestLogicEnum requestLogicEnum = TruckRequestLogicEnum.valueOf(actionType.toUpperCase());
+        List<Product> productList = requestLogicEnum.getAvailableProductList(httpSession);
         request.setAttribute("productList", productList);
         TruckWaybillDAO truckWaybillDAO = (TruckWaybillDAO) httpSession.getAttribute("TruckWaybillDAO");
-        truckWaybillDAO.updateTruckWaybill(truckIdentifier);
+        truckWaybillDAO.updateCurrentWaybill(truckIdentifier);
         List<Waybill> waybillList = truckWaybillDAO.getTruckWaybill();
         request.setAttribute("waybillList", waybillList);
         request.setAttribute("actionType", actionType);

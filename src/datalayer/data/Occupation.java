@@ -1,11 +1,11 @@
 package datalayer.data;
 
-public class OccupationData {
+public class Occupation {
     private int identifier;
     private String title;
     private String description;
 
-    public OccupationData(int identifier, String title, String description) {
+    public Occupation(int identifier, String title, String description) {
         this.identifier = identifier;
         this.title = title;
         this.description = description;

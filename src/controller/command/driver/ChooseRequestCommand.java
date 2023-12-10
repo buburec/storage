@@ -25,8 +25,8 @@ public class ChooseRequestCommand implements ActionCommand {
         truckRequestDAO.createTruckRequest(actionType, sentDate);
         String hostIdentifier = (String) httpSession.getAttribute("identifier");
         TruckDAO truckDAO = (TruckDAO) httpSession.getAttribute("TruckDAO");
-        List<Truck> truckIdentifierList =
-                TruckRequestLogicEnum.getAvailableTruckList(truckDAO, hostIdentifier, actionType);
+        TruckRequestLogicEnum requestLogicEnum = TruckRequestLogicEnum.valueOf(actionType.toUpperCase());
+        List<Truck> truckIdentifierList = requestLogicEnum.getAvailableTruckList(truckDAO, hostIdentifier);
         request.setAttribute("truckIdentifierList", truckIdentifierList);
         page = ConfigurationManager.getProperty("path.page.driver.request_create");
         return page;

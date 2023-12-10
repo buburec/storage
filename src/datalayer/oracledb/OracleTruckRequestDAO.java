@@ -16,8 +16,8 @@ public class OracleTruckRequestDAO implements TruckRequestDAO {
     }
 
     @Override
-    public List<Request> getDriverRequestList(String hostIdentifier) {
-        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.driver.request_list");
+    public List<Request> getDriverActiveRequestList(String hostIdentifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.driver.active_request_list");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, hostIdentifier);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -42,8 +42,59 @@ public class OracleTruckRequestDAO implements TruckRequestDAO {
     }
 
     @Override
-    public List<Request> getStorekeeperRequestList(String resolverIdentifier) {
-        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.storekeeper.request_list");
+    public List<Request> getDriverResolvedRequestList(String hostIdentifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.driver.resolved_request_list");
+        try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
+            preparedStatement.setString(1, hostIdentifier);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                List<Request> driverRequestList = new ArrayList<>();
+                while (resultSet.next()) {
+                    int identifier = resultSet.getInt(1);
+                    String truckModel = resultSet.getString(2);
+                    String topic = resultSet.getString(3);
+                    Date sentDate = resultSet.getDate(4);
+                    String resolver = resultSet.getString(5);
+                    String status = resultSet.getString(6);
+                    driverRequestList.add(new Request(identifier, truckModel, topic, sentDate, resolver, status));
+                }
+                return driverRequestList;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Request> getStorekeeperActiveRequestList() {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.storekeeper.active_request_list");
+        try (Statement statement = this.connection.createStatement()) {
+            try (ResultSet resultSet = statement.executeQuery(sqlQuery)) {
+                List<Request> storekeeperRequestList = new ArrayList<>();
+                while (resultSet.next()) {
+                    int identifier = resultSet.getInt(1);
+                    String truckModel = resultSet.getString(2);
+                    String topic = resultSet.getString(3);
+                    Date sentDate = resultSet.getDate(4);
+                    String resolver = resultSet.getString(5);
+                    String status = resultSet.getString(6);
+                    storekeeperRequestList.add(new Request(identifier, truckModel, topic, sentDate, resolver, status));
+                }
+                return storekeeperRequestList;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Request> getStorekeeperResolvedRequestList(String resolverIdentifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.storekeeper.resolved_request_list");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, resolverIdentifier);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -153,6 +204,17 @@ public class OracleTruckRequestDAO implements TruckRequestDAO {
     }
 
     @Override
+    public void updateReturnWaybill(String truckIdentifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.update.driver.return_waybill");
+        try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
+            preparedStatement.setString(1, truckIdentifier);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void deleteTruckRequest(int requestIdentifier) {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.delete.driver.id_truck_request");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
@@ -175,11 +237,13 @@ public class OracleTruckRequestDAO implements TruckRequestDAO {
     }
 
     @Override
-    public void updateTruckRequestStatus(int requestIdentifier, String status) {
-        String sqlQuery = SqlQueriesManager.getProperty("sql.query.update.storekeeper.request_status");
+    public void updateTruckRequest(int requestIdentifier, String resolverIdentifier, Date sentDate, String status) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.update.storekeeper.request");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, status);
-            preparedStatement.setInt(2, requestIdentifier);
+            preparedStatement.setString(2, resolverIdentifier);
+            preparedStatement.setDate(3, sentDate);
+            preparedStatement.setInt(4, requestIdentifier);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

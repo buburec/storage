@@ -1,8 +1,8 @@
 package datalayer.oracledb;
 
 import datalayer.daointerface.EmployeeDAO;
-import datalayer.data.LoginData;
-import datalayer.data.ProfileData;
+import datalayer.data.Login;
+import datalayer.data.Profile;
 import datalayer.data.User;
 import datalayer.resource.SqlQueriesManager;
 
@@ -17,21 +17,21 @@ public class OracleEmployeeDAO implements EmployeeDAO {
     }
 
     @Override
-    public List<LoginData> getLoginData(String identifier, String password) {
+    public List<Login> getLoginData(String identifier, String password) {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.login_data");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, identifier);
             preparedStatement.setString(2, password);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                List<LoginData> loginDataList = new ArrayList<>();
+                List<Login> loginList = new ArrayList<>();
                 while (resultSet.next()) {
                     identifier = resultSet.getString(1);
                     password = resultSet.getString(2);
                     String occupation = resultSet.getString(3);
                     String status = resultSet.getString(4);
-                    loginDataList.add(new LoginData(identifier, password, occupation, status));
+                    loginList.add(new Login(identifier, password, occupation, status));
                 }
-                return loginDataList;
+                return loginList;
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -42,21 +42,21 @@ public class OracleEmployeeDAO implements EmployeeDAO {
     }
 
     @Override
-    public List<ProfileData> getProfile(String identifier) {
+    public List<Profile> getProfile(String identifier) {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.profile");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, identifier);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                List<ProfileData> profileDataList = new ArrayList<>();
+                List<Profile> profileList = new ArrayList<>();
                 while (resultSet.next()) {
                     identifier = resultSet.getString(1);
                     String password = resultSet.getString(2);
                     String fullName = resultSet.getString(3);
                     String title = resultSet.getString(4);
                     String status = resultSet.getString(5);
-                    profileDataList.add(new ProfileData(identifier, password, fullName, title, status));
+                    profileList.add(new Profile(identifier, password, fullName, title, status));
                 }
-                return profileDataList;
+                return profileList;
             } catch (SQLException e) {
                 e.printStackTrace();
             }

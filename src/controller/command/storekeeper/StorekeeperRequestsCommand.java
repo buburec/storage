@@ -16,8 +16,10 @@ public class StorekeeperRequestsCommand implements ActionCommand {
         HttpSession httpSession = request.getSession();
         String identifier = (String) httpSession.getAttribute("identifier");
         TruckRequestDAO truckRequestDAO = (TruckRequestDAO) httpSession.getAttribute("TruckRequestDAO");
-        List<Request> requestList = truckRequestDAO.getStorekeeperRequestList(identifier);
-        request.setAttribute("requestList", requestList);
+        List<Request> resolvedRequestList = truckRequestDAO.getStorekeeperResolvedRequestList(identifier);
+        request.setAttribute("resolvedRequestList", resolvedRequestList);
+        List<Request> activeRequestList = truckRequestDAO.getStorekeeperActiveRequestList();
+        request.setAttribute("activeRequestList", activeRequestList);
         page = ConfigurationManager.getProperty("path.page.storekeeper.request_list");
         return page;
     }

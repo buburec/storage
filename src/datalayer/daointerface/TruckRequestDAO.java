@@ -7,9 +7,13 @@ import java.sql.Date;
 import java.util.List;
 
 public interface TruckRequestDAO {
-    List<Request> getDriverRequestList(String hostIdentifier);
+    List<Request> getDriverActiveRequestList(String hostIdentifier);
 
-    List<Request> getStorekeeperRequestList(String resolverIdentifier);
+    List<Request> getDriverResolvedRequestList(String hostIdentifier);
+
+    List<Request> getStorekeeperActiveRequestList();
+
+    List<Request> getStorekeeperResolvedRequestList(String resolverIdentifier);
 
     List<StorageTruckProduct> getStorageTruckProductList(String host_identifier);
 
@@ -21,11 +25,13 @@ public interface TruckRequestDAO {
 
     void deleteTruckRequest();
 
+    void updateReturnWaybill(String truckIdentifier);
+
     void deleteTruckRequest(int requestIdentifier);
 
     void deleteTruckRequestList(int requestIdentifier);
 
-    void updateTruckRequestStatus(int requestIdentifier, String status);
+    void updateTruckRequest(int requestIdentifier, String resolverIdentifier, Date sentDate, String status);
 
     void updateResolverResponse(int requestIdentifier, String resolverResponse);
 }

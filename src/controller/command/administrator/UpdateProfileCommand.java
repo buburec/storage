@@ -3,7 +3,7 @@ package controller.command.administrator;
 import controller.command.ActionCommand;
 import controller.resource.ConfigurationManager;
 import datalayer.daointerface.EmployeeDAO;
-import datalayer.data.ProfileData;
+import datalayer.data.Profile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,9 +19,9 @@ public class UpdateProfileCommand implements ActionCommand {
         HttpSession httpSession = request.getSession();
         EmployeeDAO employeeDAO = (EmployeeDAO) httpSession.getAttribute("EmployeeDAO");
         employeeDAO.updateProfile(password, fullName, identifier);
-        List<ProfileData> profile = employeeDAO.getProfile(identifier);
+        List<Profile> profile = employeeDAO.getProfile(identifier);
         request.setAttribute("profile", profile);
-        page = ConfigurationManager.getProperty("path.page.driver.");
+        page = ConfigurationManager.getProperty(request.getParameter("page"));
         return page;
     }
 }

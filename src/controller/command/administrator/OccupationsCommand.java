@@ -3,7 +3,7 @@ package controller.command.administrator;
 import controller.command.ActionCommand;
 import controller.resource.ConfigurationManager;
 import datalayer.daointerface.OccupationDAO;
-import datalayer.data.OccupationData;
+import datalayer.data.Occupation;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,8 +15,8 @@ public class OccupationsCommand implements ActionCommand {
         String page = null;
         HttpSession httpSession = request.getSession();
         OccupationDAO occupationDAO = (OccupationDAO) httpSession.getAttribute("OccupationDAO");
-        List<OccupationData> occupationDataList = occupationDAO.getOccupationData();
-        request.setAttribute("occupationDataList", occupationDataList);
+        List<Occupation> occupationList = occupationDAO.getOccupationData();
+        request.setAttribute("occupationDataList", occupationList);
         page = ConfigurationManager.getProperty("path.page.admin.occupation_list");
         return page;
     }

@@ -9,10 +9,14 @@
 }
 
 html {
-    font-family: 'Montserrat';
+    font-family: 'montserrat';
     box-sizing: border-box;
     color: black;
     background-color: oldlace;
+    overflow-x: hidden;
+}
+
+body {
     overflow-x: hidden;
 }
 
@@ -149,6 +153,12 @@ html {
     width: 100%;
     height: 100%; */
     overflow-y: auto;
+    position: absolute;
+    top: 104px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
 }
 
 .content__wrapper {
@@ -157,6 +167,7 @@ html {
     text-decoration: none;
     width: 80%;
     margin-top: 40px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     line-height: normal;
@@ -198,4 +209,26 @@ html {
     border-radius: 18px;
     font-size: 18px;
     transition: .5s;
+}
+
+.content__switch-form {
+    position: absolute;
+    /* border: 1px solid black; */
+    margin-top: 61px;
+    margin-left: 980px;
+}
+
+.content__switch-submit {
+    border: transparent;
+    font-size: 20px;
+    position: absolute;
+    background-color: transparent;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.content__switch-submit:hover {
+    text-decoration: underline;
+
 }

@@ -78,9 +78,8 @@
                         </li>
                     </ul>
                 </form>
-                <form name="driverCancelRequestForm" method="POST" action="/storage/user-list">
-                    <input type="hidden" name="command" value="delete_user" />
-                    <input type="hidden" name="identifier" value="${profile.get(0).getIdentifier()}" />
+                <form name="driverRequestsForm" method="POST" action="/storage/request-list">
+                    <input type="hidden" name="command" value="driver_requests" />
                     <input type="submit" name="cancelSubmit" value="Cancel" class="info__extra-submit">
                 </form>
             </div>

@@ -85,8 +85,8 @@ public class OracleTruckWaybillDAO implements TruckWaybillDAO {
     }
 
     @Override
-    public void updateTruckWaybill(String truckIdentifier) {
-        String sqlQuery = SqlQueriesManager.getProperty("sql.query.update.driver.truck_waybill");
+    public void updateCurrentWaybill(String truckIdentifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.update.driver.current_waybill");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setString(1, truckIdentifier);
             preparedStatement.executeUpdate();
@@ -96,8 +96,8 @@ public class OracleTruckWaybillDAO implements TruckWaybillDAO {
     }
 
     @Override
-    public void updateEntryWaybill(int identifier) {
-        String sqlQuery = SqlQueriesManager.getProperty("sql.query.update.driver.entry_waybill");
+    public void updateLastAcceptedWaybill(int identifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.update.driver.last_accepted_waybill");
         try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
             preparedStatement.setInt(1, identifier);
             preparedStatement.setInt(2, identifier);

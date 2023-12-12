@@ -9,7 +9,6 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class EditUserCommand implements ActionCommand {
-    private static final String PARAM_NAME_PAGE = "page";
     @Override
     public String execute(HttpServletRequest request) {
         String page = null;
@@ -18,7 +17,7 @@ public class EditUserCommand implements ActionCommand {
         EmployeeDAO employeeDAO = (EmployeeDAO) httpSession.getAttribute("EmployeeDAO");
         List<Profile> profile = employeeDAO.getProfile(identifier);
         request.setAttribute("profile", profile);
-        page = ConfigurationManager.getProperty(request.getParameter(PARAM_NAME_PAGE));
+        page = ConfigurationManager.getProperty(request.getParameter("page"));
         return page;
     }
 }

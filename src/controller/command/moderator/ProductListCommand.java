@@ -15,8 +15,10 @@ public class ProductListCommand implements ActionCommand {
         String page = null;
         HttpSession httpSession = request.getSession();
         ProductDAO productDAO = (ProductDAO) httpSession.getAttribute("ProductDAO");
-        List<Product> productList = productDAO.getProductList();
-        request.setAttribute("productList", productList);
+        List<Product> usedProductList = productDAO.getUsedProductList();
+        request.setAttribute("usedProductList", usedProductList);
+        List<Product> unusedProductList = productDAO.getUnusedProductList();
+        request.setAttribute("unusedProductList", unusedProductList);
         page = ConfigurationManager.getProperty("path.page.moderator.product_list");
         return page;
     }

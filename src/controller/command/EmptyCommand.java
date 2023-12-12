@@ -10,6 +10,8 @@ public class EmptyCommand implements ActionCommand {
         /* в случае ошибки или прямого обращения к контроллеру
          * переадресация на страницу ввода логина */
         System.out.println("EmptyCommand happened");
+        String loginInformation = "Access denied!";
+        request.setAttribute("loginInformation", loginInformation);
         String page = ConfigurationManager.getProperty("path.page.login");
         return page;
     }

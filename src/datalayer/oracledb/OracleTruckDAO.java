@@ -177,4 +177,15 @@ public class OracleTruckDAO implements TruckDAO {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void deleteTruck(String identifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.delete.driver.truck");
+        try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
+            preparedStatement.setString(1, identifier);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -11,13 +11,27 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The OracleOccupationDAO class provides an implementation of the OccupationDAO interface
+ * for Oracle database. It includes a method to retrieve occupation data.
+ */
 public class OracleOccupationDAO implements OccupationDAO {
     private final Connection connection;
 
+    /**
+     * Constructs a new OracleOccupationDAO with the specified database connection.
+     *
+     * @param connection the database connection
+     */
     public OracleOccupationDAO(Connection connection) {
         this.connection = connection;
     }
 
+    /**
+     * Retrieves occupation data from the database.
+     *
+     * @return a list of Occupation objects containing occupation information
+     */
     @Override
     public List<Occupation> getOccupationData() {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.occupation");

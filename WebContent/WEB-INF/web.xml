@@ -22,24 +22,33 @@
     </session-config>
 
     <listener>
-        <listener-class>controller.SessionListener</listener-class>
+        <listener-class>controller.listeners.SessionListener</listener-class>
     </listener>
 
     <filter>
         <filter-name>checkStatusFilter</filter-name>
-        <filter-class>controller.CheckStatusFilter</filter-class>
+        <filter-class>controller.filters.AccessFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>checkStatusFilter</filter-name>
 <!--        <url-pattern>/welcome-page</url-pattern>-->
-        <url-pattern>/block-page</url-pattern>
-        <url-pattern>/login</url-pattern>
+        <url-pattern>/block-page/*</url-pattern>
+        <url-pattern>/login/*</url-pattern>
         <url-pattern>/user-list/*</url-pattern>
-        <url-pattern>/occupation-list</url-pattern>
+        <url-pattern>/occupation-list/*</url-pattern>
         <url-pattern>/profile/*</url-pattern>
         <url-pattern>/product-list/*</url-pattern>
         <url-pattern>/request-list/*</url-pattern>
         <url-pattern>/truck-list/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>urlCheckFilter</filter-name>
+        <filter-class>controller.filters.UrlFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>urlCheckFilter</filter-name>
+            <url-pattern>/*</url-pattern>
     </filter-mapping>
 
     <servlet>
@@ -47,9 +56,11 @@
         <servlet-class>controller.FrontController</servlet-class>
     </servlet>
     <servlet-mapping>
-
         <servlet-name>welcome-page</servlet-name>
-        <url-pattern>/welcome-page</url-pattern>
+        <url-pattern>/administrator-welcome-page</url-pattern>
+        <url-pattern>/moderator-welcome-page</url-pattern>
+        <url-pattern>/driver-welcome-page</url-pattern>
+        <url-pattern>/storekeeper-welcome-page</url-pattern>
     </servlet-mapping>
 
     <servlet>

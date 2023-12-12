@@ -6,6 +6,8 @@
     <title>Block</title>
     <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
 	<link rel="stylesheet" href="./css/block.css" type="text/css">
+	<link rel="shortcut icon" href="../images/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/block.css" type="text/css">
 </head>
 <body>
     <div class="block__wrapper">

@@ -127,7 +127,7 @@
                             <form name="driverRequestsForm" method="POST" action="/storage/request-list">
                                 <input type="hidden" name="requestIdentifier" value="${requestList.get(0).getIdentifier()}" />
                                 <input type="hidden" name="command" value="delete_request" />
-                                <input type="submit" name="deleteSubmit" value="Delete">
+                                <input type="submit" name="deleteSubmit" value="Delete" class="info__extra-submit">
                             </form>
                         </c:if>
                     </li>

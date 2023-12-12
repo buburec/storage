@@ -108,6 +108,7 @@
                             <div class="list__field" id="truck__status">
                                 inside
                             </div>
+
                         </li>
                     </c:forEach>
                     <c:forEach items="${outsideTruckList}" var="truck">
@@ -121,11 +122,11 @@
                             <div class="list__field" id="truck__status">
                                 outside
                             </div>
-                            <form name="driverCreateTruckForm" method="POST" action="/storage/profile">
-                                <input type="hidden" name="command" value="forward" />
-                                <input type="hidden" name="truckIdentifier" value="${truck.getTruckIdentifier()}" />
-                                <div class="info__product__field" id="product__delete">
-                                    <input type="submit" value="" class="product__delete-submit">
+                            <form name="driverTruckForm" method="POST" action="/storage/profile">
+                                <input type="hidden" name="command" value="delete_truck" />
+                                <input type="hidden" name="identifier" value="${truck.getTruckIdentifier()}" />
+                                <div class="list__field" id="truck__delete">
+                                    <input type="submit" value="" id="list__delete-submit">
                                 </div>
                             </form>
                         </li>

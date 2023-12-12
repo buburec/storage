@@ -60,17 +60,17 @@
                     <ul class="info__list">
                         <li class="info__item">
                             <div class="info__field">
-                                <input type="text" name="identifier" value="name_surname" required>
+                                <input type="text" name="identifier" placeholder="name_surname" required>
                                 <label>Login</label>
                             </div>
                              <div class="info__field">
-                                <input type="text" name="password" value="1" placeholder="Password" required>
+                                <input type="text" name="password" placeholder="1" placeholder="Password" required>
                                 <label>Password</label>
                             </div>
                         </li>
                         <li class="info__item">
                             <div class="info__field">
-                                <input type="text" name="fullName" value="Name Surname" placeholder="Full name" required>
+                                <input type="text" name="fullName" placeholder="Name Surname" placeholder="Full name" required>
                                 <label>Full name</label>
                             </div>
                             <div class="info__select-field">

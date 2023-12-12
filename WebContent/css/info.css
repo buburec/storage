@@ -470,3 +470,7 @@
     border-left: 2px solid black;
     border-right: transparent;
 }
+
+.info__item form[name="driverDeleteWaybillProductForm"] {
+    width: auto;
+}

@@ -10,12 +10,30 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The OracleEmployeeDAO class provides an implementation of the EmployeeDAO interface
+ * for Oracle database. It includes methods to retrieve login data, user profiles, create users,
+ * delete users, update user profiles, update user status, and get a list of users.
+ */
 public class OracleEmployeeDAO implements EmployeeDAO {
     private final Connection connection;
+
+    /**
+     * Constructs a new OracleEmployeeDAO with the specified database connection.
+     *
+     * @param connection the database connection
+     */
     public OracleEmployeeDAO(Connection connection) {
         this.connection = connection;
     }
 
+    /**
+     * Retrieves login data for a given identifier and password.
+     *
+     * @param identifier the user identifier
+     * @param password   the user password
+     * @return a list of Login objects containing login information
+     */
     @Override
     public List<Login> getLoginData(String identifier, String password) {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.login_data");
@@ -41,6 +59,12 @@ public class OracleEmployeeDAO implements EmployeeDAO {
         return null;
     }
 
+    /**
+     * Retrieves user profiles for a given identifier.
+     *
+     * @param identifier the user identifier
+     * @return a list of Profile objects containing user profiles
+     */
     @Override
     public List<Profile> getProfile(String identifier) {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.profile");
@@ -66,6 +90,14 @@ public class OracleEmployeeDAO implements EmployeeDAO {
         return null;
     }
 
+    /**
+     * Creates a new user with the specified information.
+     *
+     * @param identifier           the user identifier
+     * @param password             the user password
+     * @param fullName             the user's full name
+     * @param occupationIdentifier the identifier of the user's occupation
+     */
     @Override
     public void createUser(String identifier, String password, String fullName, int occupationIdentifier) {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.insert.user");
@@ -80,6 +112,11 @@ public class OracleEmployeeDAO implements EmployeeDAO {
         }
     }
 
+    /**
+     * Deletes a user with the specified identifier.
+     *
+     * @param identifier the user identifier
+     */
     @Override
     public void deleteUser(String identifier) {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.delete.user");
@@ -91,6 +128,13 @@ public class OracleEmployeeDAO implements EmployeeDAO {
         }
     }
 
+    /**
+     * Updates the profile of a user with the specified information.
+     *
+     * @param password   the user password
+     * @param fullName   the user's full name
+     * @param identifier the user identifier
+     */
     @Override
     public void updateProfile(String password, String fullName, String identifier) {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.update.profile");
@@ -104,6 +148,12 @@ public class OracleEmployeeDAO implements EmployeeDAO {
         }
     }
 
+    /**
+     * Updates the status of a user with the specified information.
+     *
+     * @param status     the user status
+     * @param identifier the user identifier
+     */
     @Override
     public void updateStatus(String status, String identifier) {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.update.status");
@@ -116,6 +166,11 @@ public class OracleEmployeeDAO implements EmployeeDAO {
         }
     }
 
+    /**
+     * Retrieves a list of users.
+     *
+     * @return a list of User objects containing user information
+     */
     @Override
     public List<User> getUserList() {
         String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.user_list");

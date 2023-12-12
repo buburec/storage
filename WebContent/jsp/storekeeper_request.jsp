@@ -150,7 +150,7 @@
                                 <input type="hidden" name="requestIdentifier" value="${requestList.get(0).getIdentifier()}" />
                                 <input type="hidden" name="topic" value="${requestList.get(0).getTopic()}" />
                                 <input type="hidden" name="command" value="decline_request" />
-                                <input type="submit" name="declineSubmit" value="Decline">
+                                <input type="submit" name="declineSubmit" value="Decline" class="info__extra-submit">
                             </form>
                         </c:if>
                     </li>

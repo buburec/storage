@@ -5,6 +5,7 @@ import controller.command.administrator.*;
 import controller.command.driver.*;
 import controller.command.moderator.BlockUserCommand;
 import controller.command.moderator.CreateProductCommand;
+import controller.command.moderator.DeleteProductCommand;
 import controller.command.moderator.ProductListCommand;
 import controller.command.storekeeper.*;
 
@@ -167,6 +168,16 @@ public enum CommandEnum {
     DRIVER_RETURN_WAYBILL {
         {
             this.command = new DriverReturnWaybillCommand();
+        }
+    },
+    DELETE_PRODUCT {
+        {
+            this.command = new DeleteProductCommand();
+        }
+    },
+    DELETE_TRUCK {
+        {
+            this.command = new DeleteTruckCommand();
         }
     };
 

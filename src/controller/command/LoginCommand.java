@@ -27,7 +27,7 @@ public class LoginCommand implements ActionCommand {
             page = loginLogicEnum.getRoleAttributes(loginList, httpSession, factory);
         } else {
             String wrongLogin = "Wrong login or/and password!";
-            request.setAttribute("wrongLogin", wrongLogin);
+            request.setAttribute("loginInformation", wrongLogin);
             page = ConfigurationManager.getProperty("path.page.login");
         }
         return page;

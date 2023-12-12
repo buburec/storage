@@ -53,8 +53,11 @@
     </header>
 
     <div class="body__wrapper">
-        <div class="content__wrapper">
-            <h1>Storage product list</h1>
+        <div class="content__switch-form">
+            <input type="submit" id="toggleButton" value="Unused product list..." class="content__switch-submit">
+        </div>
+        <div id="usedProductContent" class="content__wrapper">
+            <h1>Used product list</h1>
             <div class="list__wrapper">
                 <form name="moderatorCreateUserForm" method="POST" action="/storage/product-list/create-product">
                     <input type="hidden" name="command" value="forward" />
@@ -62,7 +65,7 @@
                     <input type="submit" name="createSubmit" value="Create new" class="content__submit">
                 </form>
                 <ul>
-                    <c:forEach items="${productList}" var="product">
+                    <c:forEach items="${usedProductList}" var="product">
                         <li class="list__item">
                             <div class="list__field" id="product__identifier">
                                  <p>${product.getIdentifier()}</p>
@@ -81,6 +84,70 @@
                 </ul>
             </div>
         </div>
+
+        <div id="unusedProductContent" class="content__wrapper">
+            <h1>Unused product list</h1>
+            <div class="list__wrapper">
+                <form name="moderatorCreateUserForm" method="POST" action="/storage/product-list/create-product">
+                    <input type="hidden" name="command" value="forward" />
+                    <input type="hidden" name="page" value="path.page.moderator.product_create" />
+                    <input type="submit" name="createSubmit" value="Create new" class="content__submit">
+                </form>
+                <ul>
+                    <c:forEach items="${unusedProductList}" var="product">
+                        <li class="list__item">
+                            <div class="list__field" id="product__identifier">
+                                 <p>${product.getIdentifier()}</p>
+                            </div>
+                            <div class="list__field" id="product__title">
+                                <p>${product.getTitle()}</p>
+                            </div>
+                            <div class="list__field" id="product__description">
+                                <p>${product.getDescription()}</p>
+                            </div>
+                            <div class="list__field" id="product__quantity">
+                                $<p>${product.getPrice()}</p>
+                            </div>
+                            <form name="deleteProduct" method="POST" action="/storage/product-list">
+                                <input type="hidden" name="command" value="delete_product" />
+                                <input type="hidden" name="identifier" value="${product.getIdentifier()}" />
+                                <div class="list__field" id="product__delete">
+                                    <input type="submit" value="" id="list__delete-submit">
+                                </div>
+                            </form>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to the content wrappers
+            var usedProductContent = document.getElementById("usedProductContent");
+            var unusedProductContent = document.getElementById("unusedProductContent");
+
+            // Get reference to the button
+            var toggleButton = document.getElementById("toggleButton");
+
+            // Initial state (show storage content, hide truck content)
+            usedProductContent.style.display = "flex";
+            unusedProductContent.style.display = "none";
+
+            // Add click event listener to the button
+            toggleButton.addEventListener("click", function () {
+                // Toggle visibility of content wrappers
+                if (usedProductContent.style.display === "flex") {
+                    usedProductContent.style.display = "none";
+                    unusedProductContent.style.display = "flex";
+                    toggleButton.value = "Used product list...";
+                } else {
+                    usedProductContent.style.display = "flex";
+                    unusedProductContent.style.display = "none";
+                    toggleButton.value = "Unused product list...";
+                }
+            });
+        });
+    </script>
 </body>
 </html>

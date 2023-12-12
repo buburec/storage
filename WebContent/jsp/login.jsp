@@ -12,13 +12,15 @@
     <link rel="stylesheet" href="../css/login.css" type="text/css">
 </head>
 <body>
-    <div class="wrong__wrapper">
-        <p>${wrongLogin}</p>
-    </div>
+    <c:if test="${not empty loginInformation}">
+        <div class="wrong__wrapper">
+            <p>${loginInformation}</p>
+        </div>
+    </c:if>
     <div class="login__wrapper">
         <h1>StorageKP</h1>
         <div class="login__content">
-            <form name="loginForm" method="POST" action="welcome-page">
+            <form name="loginForm" method="POST" action="/storage/welcome-page">
                 <input type="hidden" name="command" value="login" />
                 <div class="login__field">
                     <input type="text" name="login" required>

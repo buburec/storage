@@ -77,11 +77,6 @@
                         </li>
                     </ul>
                 </form>
-                <form name="adminCreateCancel" method="POST" action="/storage/user-list">
-                    <input type="hidden" name="command" value="users" />
-                    <input type="hidden" name="page" value="path.page.admin.user_list" />
-                    <input type="submit" name="cancelSubmit" value="Cancel" class="info__extra-submit">
-                </form>
             </div>
         </div>
     </div>

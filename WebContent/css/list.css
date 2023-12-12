@@ -136,11 +136,17 @@ input[name="createExitSubmit"] {
 }
 
 #product__description.list__field {
-    width: 50%;
+    width: 40%;
 }
 
 #product__quantity.list__field {
-    width: auto;
+    width: 10%;
+}
+
+#product__delete.list__field {
+    justify-content: right;
+    border-left: transparent;
+    width: 65px;
 }
 
 #truck__identifier.list__field {
@@ -158,6 +164,12 @@ input[name="createExitSubmit"] {
 
 #truck__picture {
     background-image: url(../images/truck.svg);
+}
+
+#truck__delete {
+    border-left: transparent;
+    width: 170px;
+    justify-content: right;
 }
 
 #request__identifier.list__field {
@@ -191,4 +203,33 @@ input[name="createExitSubmit"] {
 
 #request__picture {
     background-image: url(../images/request.svg);
+}
+
+#list__delete-submit {
+    /* border: 2px solid black; */
+    border-radius: 16px;
+    margin: 0px;
+    margin-left: 10px;
+    padding: 0px;
+    background: oldlace;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/delete.svg);
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+
+    overflow: inherit;
+}
+
+#list__delete-submit:hover {
+    border-radius: 100%;
+    background: tomato;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/delete.svg);
+    cursor: pointer;
+    transition: 0.5s;
+
+    overflow: inherit;
 }

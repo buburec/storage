@@ -36,8 +36,31 @@ public class OracleProductDAO implements ProductDAO {
     }
 
     @Override
-    public List<Product> getProductList() {
-        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.moderator.product_list");
+    public List<Product> getUsedProductList() {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.moderator.used_product_list");
+        try (Statement statement = this.connection.createStatement()) {
+            try (ResultSet resultSet = statement.executeQuery(sqlQuery)) {
+                List<Product> productList = new ArrayList<>();
+                while (resultSet.next()) {
+                    int identifier = resultSet.getInt(1);
+                    String title = resultSet.getString(2);
+                    String description = resultSet.getString(3);
+                    float price = resultSet.getFloat(4);
+                    productList.add(new Product(identifier, title, description, price));
+                }
+                return productList;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Product> getUnusedProductList() {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.select.moderator.unused_product_list");
         try (Statement statement = this.connection.createStatement()) {
             try (ResultSet resultSet = statement.executeQuery(sqlQuery)) {
                 List<Product> productList = new ArrayList<>();
@@ -65,6 +88,17 @@ public class OracleProductDAO implements ProductDAO {
             preparedStatement.setString(1, title);
             preparedStatement.setString(2, description);
             preparedStatement.setFloat(3, price);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteProduct(int identifier) {
+        String sqlQuery = SqlQueriesManager.getProperty("sql.query.delete.moderator.product");
+        try (PreparedStatement preparedStatement = this.connection.prepareStatement(sqlQuery)) {
+            preparedStatement.setInt(1, identifier);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
